@@ -1,45 +1,68 @@
-from bs4 import BeautifulSoup
-import requests
 import csv
+import requests
+from bs4 import BeautifulSoup
 
-url = 'https://www.investing.com/equities/nike'
-response = requests.get(url)
-def write_to_csv(data, file_path='output.csv'):
-    with open(file_path, 'a', newline='', encoding='utf-8') as csvfile:
-        csv_writer = csv.writer(csvfile)
-        csv_writer.writerow(data)
 
-if response.status_code == 200:
-    soup = BeautifulSoup(response.text, 'lxml')  
-    dives = soup.find_all('div', class_='min-w-0')
-    if dives:
-        for div in dives:
-            name = div.find('h1')
-            if name:
-                data=([name.get_text(strip=True)])
-                write_to_csv(['NAME'])
-                write_to_csv(data)
+base_url = 'https://www.investing.com/equities/'
+brand_names = [
+    'nike',
+    'coca-cola-co',
+    'microsoft-corp',
+    '3m-co',
+    'american-express',
+    'amgen-inc',
+    'apple-computer-inc',
+    'boeing-co',
+    'cisco-sys-inc',
+    'goldman-sachs-group',
+    'ibm',
+    'intel-corp',
+    'jp-morgan-chase',
+    'mcdonalds',
+    'salesforce-com',
+    'verizon-communications',
+    'visa-inc',
+    'wal-mart-stores',
+    'disney',
+]
+file = open('output.csv', 'a', newline='', encoding='utf-8')
+writer = csv.writer(file)
 
-    dives1 = soup.find_all('dl', class_='flex-1 sm:mr-8')
-    if dives1:
-        for div in dives1:
-            div_elements = div.find_all('div')  
-            if div_elements:
-                for div_element in div_elements:
-                    dt_elements = div_element.find_all('dt') 
-                    dd_elements = div_element.find_all('dd')
-                    min_length = min(len(dt_elements), len(dd_elements))
-                    for i in range(min_length):
-                        heading = dt_elements[i].find('span')
-                        data = dd_elements[i].find('span')
+def scraping():
+    url = f'{base_url}{brand_names[0]}'
+    response = requests.get(url)
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.content, 'html.parser')
+        headings= soup.find_all('dt', class_='font-semibold text-[#181C21] flex-1')
+        if headings:
+            header_row = []
+            header_row.extend(heading.text.strip() for heading in headings)
+            writer.writerow(header_row)
+        else:
+            print("Not found")
 
-                        if heading and data:
-                            heading_text = heading.get_text(strip=True)
-                            data_text = data.get_text(strip=True)
-                            write_to_csv([heading_text])
-                            write_to_csv([data_text])
-    else:
-        print('Error: Unable to find required elements on the page.')
+    for brand_name in brand_names:
+        url = f'{base_url}{brand_name}'
+        response = requests.get(url) 
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.content, 'html.parser')
+            name_tag = soup.find('h1', class_='text-xl text-left font-bold leading-7 md:text-3xl md:leading-8 mb-2.5 md:mb-2 text-[#232526] rtl:soft-ltr')
+            name = name_tag.text.strip() if name_tag else 'N/A'
+            all_data = soup.find_all('dd', class_='text-[#232526] whitespace-nowrap')
+            if all_data:
+                data_values = [name]
 
-else:
-    print(f'Error: Unable to fetch the URL. Status code: {response.status_code}')
+                for data in all_data:
+                    value = data.text.strip()
+                    data_values.append(value)
+                writer.writerow(data_values)
+            else:
+                print("Data not found")
+        else:
+            print(f"Failed to fetch data. Status Code: {response.status_code}")
+    file.close()
+scraping()
+
+        
+
+
