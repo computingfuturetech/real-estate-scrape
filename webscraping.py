@@ -63,6 +63,5 @@ def scraping():
     file.close()
 scraping()
 
-        
 
 
