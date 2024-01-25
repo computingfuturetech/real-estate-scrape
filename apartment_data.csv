@@ -1,25 +1,49 @@
-Price,Reference Number,Permit Number,Title,Rooms,Baths,Area,Phone_number_list,Contact Name,Latitude,Longitude,Furnishing Status
-1250000,RL6262,7125159700,Furnished | Vacant | Well Maintained,1,2,80.36112960000001,+971547930600,Jacob Fletcher,25.070143,55.133842,furnished
-2950000,MB-S-3106,7153436293,High Floor | Full Sea View | Furnished | Resale,0,1,30.9497187456,+971505766118,Hany Nour Eldin,25.087447039251,55.144634052761,unfurnished
-1750000,A1-S-7533,7115555600,Partial Sea View| Middle  Floor| Spacious 2 BR,2,3,135.26682624,+971528412632,Irina Nikulina,25.089967,55.148283,furnished
-5300000,AS-049,7123604500,Fully Upgraded | High Floor | Full Sea View | VOT,2,4,243.3195649728,+971553463602,Fergus Nde,25.088199615479,55.14640045166,furnished
-1000000,LAP-S-13191,71502863551,Studio \u002F Furnished \u002F Amazing  View Of Sea,0,1,38.0902464,+971522847018,Jean Daniels,25.087447039251,55.144634052761,furnished
-4500000,axc-3970605,7126082696,High-Floor | Marina View | Furnished | Corner unit,2,3,128.48490432,+971564465789,Lillian Le Campion,25.079645,55.139158,unfurnished
-950000,MCC-S-20281,7118660400,Best Investment | High Floor | Partial Marina View,1,1,72.18566208,+971525237765,Hasan Ahmed,25.080332254966,55.145337581635,unfurnished
-920000,649-Ap-S-3021,7127237600,Quick Sale  | Vacant  |  Negotiable,1,2,68.37663744000001,+971529236815,Beny Pereira,25.089437,55.149102,furnished
-5650000,RL34173,7143170247,Exclusive | High Floor | Full Marina View | Vacant,3,3,153.84743424,+971585187266,Sabida Azharian,25.07238,55.136245,unfurnished
-2200000,ELY-S-21594,7118055584,Vacant I Fully Furnished I Upgraded,2,3,114.36364224,+971562547581,Pauline Bruin,25.079630849994,55.139218155788,furnished
-2200000,365-Ap-S-1306,1936726429,Vacant soon I Spacious I High Floor I Sea View,2,3,125.23329792,+971521937175,Nazim Mohamed,25.090678213447,55.148739419203,unfurnished
-1650000,CB-S-003948,7127017700,Marina View | High Floor | Furnished,0,1,50.91086592000001,+971585039032,Yiannis Karalis,25.077434,55.140271,unfurnished
-5500000,SALE018999,7143153515,Full Marina View \u002F Vacant \u002F Multiple Options,3,3,153.47582208,+971523992781,Aaron Parton,25.07238,55.136245,furnished
-900000,BI-S-20-5200,7118443100,Chiller Free | Well Maintained | Spacious Unit,1,2,65.032128,+971581897205,Adam Khan,25.068199157715,55.13219833374,unfurnished
-2050000,axc-3972113,71426296727,Marina view | Genuine Resale | High Floor,1,1,71.25663168,,Shehryar Malik,25.082410250027,55.14351832845,unfurnished
-1950000,RL-64490,7115623200,Exclusive | Fully Furnished | Low Floor,2,3,129.32103168,,Daniel Vukaj,25.075712,55.135092,unfurnished
-15500000,PS-7178180,71242653376,Amazing Doublex Penthouse | Full Marina View,4,4,368.3995728768,,Anna Gkiosi,25.07238,55.136245,unfurnished
-2600000,MCC-S-21545,7127464300,High Floor | Sea And Harbour View | Investor Deal,2,3,142.79197248,,Jackson Williams,25.090678213447,55.148739419203,furnished
-1250000,AP723353S,7119858000,Large Layout | Unfurnished | Low Floor,1,2,113.71332096,,Mohammad Bilal Mazar,25.079500198364,55.141998291016,furnished
-2500000,AP552710S,7116765914,Large Unit | Full Sea View | Motivated Seller,1,2,112.31977536,,Jawad Motiwala,25.087214,55.145463,unfurnished
-2160000,axc-3970449,7126082368,Brand New | Furnished | VOT | High Floor,1,1,68.74824960000001,,Gaziza Kazakhstan,25.079645,55.139158,furnished
-3500000,AP725281S,7110257967,Full Marina View | Vacant | Most Wanted,2,3,127.46297088,,Francesco Fabbri,25.086782726638,55.145288407857,any
-1350000,RL31525,7135732514,Amazing 1 Bed | Mid Floor | Sea Views,1,2,66.33277056,,Vokhid Buranov,25.068527,55.128906,
-2050000,PB-S-2966,7118447000,Fully Upgraded | 2 bedrooms | Furnished | Vacant,2,3,124.9545888,,Rowan Beale,25.073423,55.138686,
+Price    ,Reference Number ,Permit Number ,Title                                                  ,Rooms ,Baths ,Area               ,Phone_number_list ,Contact Name                  ,Latitude        ,Longitude       ,Furnishing Status
+ 1250000 ,RL6262           ,   7125159700 ,Furnished | Vacant | Well Maintained                   ,    1 ,    2 , 80.36112960000001 ,+971547930600     ,Jacob Fletcher                ,25.070143       ,55.133842       ,furnished
+ 2950000 ,MB-S-3106        ,   7153436293 ,High Floor | Full Sea View | Furnished | Resale        ,    0 ,    1 , 30.9497187456     ,+971505766118     ,Hany Nour Eldin               ,25.087447039251 ,55.144634052761 ,unfurnished
+ 1750000 ,A1-S-7533        ,   7115555600 ,Partial Sea View| Middle  Floor| Spacious 2 BR         ,    2 ,    3 ,135.26682624       ,+971528412632     ,Irina Nikulina                ,25.089967       ,55.148283       ,furnished
+ 5300000 ,AS-049           ,   7123604500 ,Fully Upgraded | High Floor | Full Sea View | VOT      ,    2 ,    4 ,243.3195649728     ,+971553463602     ,Fergus Nde                    ,25.088199615479 ,55.14640045166  ,furnished
+ 1000000 ,LAP-S-13191      ,  71502863551 ,Studio \u002F Furnished \u002F Amazing  View Of S ea    ,    0 ,    1 , 38.0902464        ,+971522847018     ,Jean Daniels                  ,25.087447039251 ,55.144634052761 ,furnished
+ 4500000 ,axc-3970605      ,   7126082696 ,High-Floor | Marina View | Furnished | Corner unit     ,    2 ,    3 ,128.48490432       ,+971564465789     ,Lillian Le Campion            ,25.079645       ,55.139158       ,unfurnished
+  950000 ,MCC-S-20281      ,   7118660400 ,Best Investment | High Floor | Partial Marina View     ,    1 ,    1 , 72.18566208       ,+971525237765     ,Hasan Ahmed                   ,25.080332254966 ,55.145337581635 ,unfurnished
+  920000 ,649-Ap-S-3021    ,   7127237600 ,Quick Sale  | Vacant  |  Negotiable                    ,    1 ,    2 , 68.37663744000001 ,+971529236815     ,Beny Pereira                  ,25.089437       ,55.149102       ,furnished
+ 5650000 ,RL34173          ,   7143170247 ,Exclusive | High Floor | Full Marina View | Vacant     ,    3 ,    3 ,153.84743424       ,+971585187266     ,Sabida Azharian               ,25.07238        ,55.136245       ,unfurnished
+ 2200000 ,ELY-S-21594      ,   7118055584 ,Vacant I Fully Furnished I Upgraded                    ,    2 ,    3 ,114.36364224       ,+971562547581     ,Pauline Bruin                 ,25.079630849994 ,55.139218155788 ,furnished
+ 2200000 ,365-Ap-S-1306    ,   1936726429 ,Vacant soon I Spacious I High Floor I Sea View         ,    2 ,    3 ,125.23329792       ,+971521937175     ,Nazim Mohamed                 ,25.090678213447 ,55.148739419203 ,unfurnished
+ 1650000 ,CB-S-003948      ,   7127017700 ,Marina View | High Floor | Furnished                   ,    0 ,    1 , 50.91086592000001 ,+971585039032     ,Yiannis Karalis               ,25.077434       ,55.140271       ,unfurnished
+ 5500000 ,SALE018999       ,   7143153515 ,Full Marina View \u002F Vacant \u002F Multiple Options ,    3 ,    3 ,153.47582208       ,+971523992781     ,Aaron Parton                  ,25.07238        ,55.136245       ,furnished
+  900000 ,BI-S-20-5200     ,   7118443100 ,Chiller Free | Well Maintained | Spacious Unit         ,    1 ,    2 , 65.032128         ,+971581897205     ,Adam Khan                     ,25.068199157715 ,55.13219833374  ,unfurnished
+ 2050000 ,axc-3972113      ,  71426296727 ,Marina view | Genuine Resale | High Floor              ,    1 ,    1 , 71.25663168       ,                  ,Shehryar Malik                ,25.082410250027 ,55.14351832845  ,unfurnished
+ 1950000 ,RL-64490         ,   7115623200 ,Exclusive | Fully Furnished | Low Floor                ,    2 ,    3 ,129.32103168       ,                  ,Daniel Vukaj                  ,25.075712       ,55.135092       ,unfurnished
+15500000 ,PS-7178180       ,  71242653376 ,Amazing Doublex Penthouse | Full Marina View           ,    4 ,    4 ,368.3995728768     ,                  ,Anna Gkiosi                   ,25.07238        ,55.136245       ,unfurnished
+ 2600000 ,MCC-S-21545      ,   7127464300 ,High Floor | Sea And Harbour View | Investor Deal      ,    2 ,    3 ,142.79197248       ,                  ,Jackson Williams              ,25.090678213447 ,55.148739419203 ,furnished
+ 1250000 ,AP723353S        ,   7119858000 ,Large Layout | Unfurnished | Low Floor                 ,    1 ,    2 ,113.71332096       ,                  ,Mohammad Bilal Mazar          ,25.079500198364 ,55.141998291016 ,furnished
+ 2500000 ,AP552710S        ,   7116765914 ,Large Unit | Full Sea View | Motivated Seller          ,    1 ,    2 ,112.31977536       ,                  ,Jawad Motiwala                ,25.087214       ,55.145463       ,unfurnished
+ 2160000 ,axc-3970449      ,   7126082368 ,Brand New | Furnished | VOT | High Floor               ,    1 ,    1 , 68.74824960000001 ,                  ,Gaziza Kazakhstan             ,25.079645       ,55.139158       ,furnished
+ 3500000 ,AP725281S        ,   7110257967 ,Full Marina View | Vacant | Most Wanted                ,    2 ,    3 ,127.46297088       ,                  ,Francesco Fabbri              ,25.086782726638 ,55.145288407857 ,any
+ 1350000 ,RL31525          ,   7135732514 ,Amazing 1 Bed | Mid Floor | Sea Views                  ,    1 ,    2 , 66.33277056       ,                  ,Vokhid Buranov                ,25.068527       ,55.128906       ,
+ 2050000 ,PB-S-2966        ,   7118447000 ,Fully Upgraded | 2 bedrooms | Furnished | Vacant       ,    2 ,    3 ,124.9545888        ,                  ,Rowan Beale                   ,25.073423       ,55.138686       ,
+ 4400000 ,axc-3967563      ,   7143174383 ,Marina and JLT Facing | Corner Unit | High Floor       ,    2 ,    2 ,107.21010816       ,+971586983712     ,Fares Yahiaoui                ,25.07238        ,55.136245       ,unfurnished
+ 5550000 ,axc-3971221      ,   7148052599 ,EXCLUSIVE | Marina View | 2 Parking | High Floor       ,    2 ,    3 ,140.93391168       ,+971586448869     ,Maksim Tuguchev               ,25.086517       ,55.147372       ,unfurnished
+ 2400000 ,CB-S-006000      ,   7123894600 ,Upgraded | Fully Furnished | Partial Marina View|      ,    1 ,    1 , 82.77660864       ,+971585039032     ,Sandra Johanna Santana Laguna ,25.075284       ,55.134437       ,furnished
+ 2400000 ,RL-18886         ,   7110253081 ,Vacant Now | Marina View | Part Furnished              ,    2 ,    2 ,116.50041216       ,+971585460601     ,Daniel Vukaj                  ,25.086782726638 ,55.145288407857 ,furnished
+ 2400000 ,AP584661S        ,   7110253234 ,Canal and Sea View | Vacant | Motivated Seller         ,    2 ,    3 ,127.83458304       ,+971544001863     ,Nina Pekina                   ,25.086782726638 ,55.145288407857 ,unfurnished
+ 2400000 ,MCC-S-21478      ,   7129931681 ,Marina View | High Floor | Great Investment            ,    1 ,    1 , 63.1740672        ,+971544001863     ,Driss Elmania                 ,25.07086073369  ,55.125834222264 ,unfurnished
+ 3300000 ,DP-S-45449       ,  71375659540 ,Resale and On High Floor w\u002F Payment Plan          ,    2 ,    2 ,120.21653376       ,+971565442366     ,Paul  Musson                  ,25.091571616327 ,55.150411829763 ,unfurnished
+ 4378400 ,DP-S-45448       ,  71375659445 ,Spacious and High floor with Marina View               ,    3 ,    3 ,156.44871936       ,+971565442366     ,Paul  Musson                  ,25.091571616327 ,55.150411829763 ,unfurnished
+ 3517477 ,DP-S-42937       ,  71426273442 ,Resale w\u002F Unique Layout and Amazing View          ,    2 ,    2 ,110.5546176        ,+971565442366     ,Aram Pogosyan                 ,25.082410250027 ,55.14351832845  ,unfurnished
+ 3524081 ,DP-S-42938       ,  71426274392 ,Resale | Luxury Finishing | More Options               ,    2 ,    3 ,110.5546176        ,+971524224215     ,Aram Pogosyan                 ,25.082410250027 ,55.14351832845  ,unfurnished
+ 3376331 ,DP-S-42936       ,  71426272017 ,Resale Apt | Spacious with Amazing Views               ,    2 ,    2 ,110.5546176        ,+971528412632     ,Aram Pogosyan                 ,25.082410250027 ,55.14351832845  ,unfurnished
+ 2700000 ,DP-S-44682       ,  71375638260 ,Resale Apt | Spacious with Full Sea View               ,    1 ,    2 , 87.3288576        ,+971528412632     ,Anna Vasony                   ,25.091571616327 ,55.150411829763 ,furnished
+ 3700000 ,AS-076           ,   7118049897 ,Ready to Move-in | High Floor | Massive Lay-out        ,    3 ,    4 ,223.8963264        ,+971528412632     ,Fergus Nde                    ,25.08888735328  ,55.149446119655 ,unfurnished
+ 3980000 ,AS-077           ,   7118049993 ,Well Kept | Vacant on transfer | Good ROI              ,    3 ,    4 ,229.0059936        ,+971528412632     ,Fergus Nde                    ,25.08888735328  ,55.149446119655 ,unfurnished
+ 3900000 ,AS-075           ,   7118049900 ,Vacant on Transfer |  Well Kept | Good Investment      ,    3 ,    4 ,229.0059936        ,+971585039032     ,Fergus Nde                    ,25.08888735328  ,55.149446119655 ,unfurnished
+ 4800000 ,AS-089           ,   7154083030 ,Tastefully Upgraded Largest 3BR Layout High Floor      ,    3 ,    5 ,276.75815616       ,+971585282119     ,Fergus Nde                    ,25.089767351636 ,55.150803923607 ,unfurnished
+ 1625000 ,RL-66620         ,   7114958968 ,Exclusive | Vacant Now | Marina Views                  ,    1 ,    2 , 65.49664320000001 ,+971585268935     ,Daniel Vukaj                  ,25.074399723472 ,55.138877481222 ,furnished
+ 2450000 ,AP725044S        ,   7127012100 ,Vacant | Marina View | High Floor | Furnished          ,    1 ,    2 , 80.36112960000001 ,+971585989408     ,Sharfuddin Mohammed           ,25.077434       ,55.140271       ,furnished
+ 2600000 ,PS-7246845       ,  71375639780 ,Luxurious | Large Layout | Handover Soon               ,    1 ,    1 , 83.80040014080001 ,+971503843191     ,Jad Demian                    ,25.091571616327 ,55.150411829763 ,unfurnished
+ 3280000 ,DUB142307        ,   7159968120 ,Vacant | Full Marina View | Fully Upgraded             ,    3 ,    3 ,147.34422144       ,                  ,Francis Byrne                 ,25.084059       ,55.144741       ,unfurnished
+ 2500000 ,L-215905         ,   7116132500 ,3 Bath | Marina View | Sea View | Vacant               ,    3 ,    3 ,167.59708416       ,                  ,Hamid Gbadamosi               ,25.084499359131 ,55.144500732422 ,furnished
+ 1300000 ,AP508043S        ,   7148061760 ,Partial Sea View | High ROI | Furnished                ,    1 ,    2 , 89.18691840000001 ,                  ,Muhammad Waqas Khan           ,25.089626       ,55.148014       ,unfurnished
+ 6000000 ,DP-S-44445       ,  71401015318 ,High-Floor w\u002F Maids Room | Handover 2025          ,    3 ,    5 ,196.9544448        ,                  ,Abu Hamdan                    ,25.084894       ,55.144343       ,furnished
+ 1050000 ,RL-67331         ,   7118456100 ,Vacant | Fully Upgraded | High ROI 7%+                 ,    1 ,    2 , 67.07599488000001 ,                  ,Yahya Benomar                 ,25.068199157715 ,55.13219833374  ,any
