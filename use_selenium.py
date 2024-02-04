@@ -27,25 +27,18 @@ def scrape_and_write_data(url, headers, csv_file_path):
                     file_exists = os.path.isfile(csv_file_path)
                     file_empty = not file_exists or os.path.getsize(csv_file_path) == 0
 
-                    # Read existing data from the CSV file into a dictionary
                     existing_ids = []
                     if file_exists and not file_empty:
                         with open(csv_file_path, 'r', newline='', encoding='utf-8') as csv_file:
                             csv_reader = csv.reader(csv_file)
-                            csv_header = next(csv_reader)  # Skip header
+                            csv_header = next(csv_reader)  
                             for row in csv_reader:
-                                # print(row)
-                                # Check for the presence of a comma in each value and strip whitespaces from the ID
                                 if any(',' in value for value in row):
                                     existing_ids.append(row[0].strip())
-                                    continue  # Skip this row if a comma is found
-                                    
+                                    continue    
                                 existing_ids.append(row[0].strip())
 
-                    # print(existing_ids)
-                    # Check if the ID already exists in the existing data
                     if str(listing_ids[i]) not in existing_ids:
-                        # Iterate through the information to match the first and second span values
                         for value in all_information:
                             li_tags = value.find_all('li')
                             for li_tag in li_tags:
@@ -73,48 +66,68 @@ def scrape_and_write_data(url, headers, csv_file_path):
 
 
 new_url = 'https://www.bayut.com/for-sale/apartments/dubai/dubai-marina/'
-response = requests.get(new_url)
+page_numbers = [
+    '',
+    'page-2/',
+    'page-3/',
+    'page-4/',
+    'page-5/',
+    'page-6/',
+    'page-7/',
+    'page-8/',
+    'page-9/',
+    'page-10/',
+    'page-11/',
+    'page-12/',
+    'page-13/',
+    'page-14/',
+    'page-15/',
+    'page-16/',
+    'page-17/',
+    'page-18/',
+    'page-19/',
+    'page-20/',
+    'page-21/',
+    'page-22/',
+    'page-23/',
+    'page-24/'
+]
 
-if response.status_code == 200:
-    soup = BeautifulSoup(response.content, 'html.parser')
-    script_tags = soup.find_all('script')
-    if script_tags:
-        first_script = script_tags[0]
-        first_script_content = first_script.get_text(strip=True)
-        json_match = re.search(r'({.*})', first_script_content)
-        if json_match:
-            listing_ids = re.findall(r'"listing_id":\s*\[([^\]]+)]', first_script_content)
-            if listing_ids:
-                listing_ids = [int(id.strip()) for id in listing_ids[0].split(',')]
-                csv_file_path1 = 'building_information1.csv'
-                csv_file_path2 = 'validated_information.csv'
-                csv_file_path3 = 'project_information.csv'
-                
+for page_number in page_numbers:
+        current_url = f'{new_url}{page_number}'
+        response = requests.get(current_url)
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.content, 'html.parser')
+            script_tags = soup.find_all('script')
+            if script_tags:
+                first_script = script_tags[0]
+                first_script_content = first_script.get_text(strip=True)
+                json_match = re.search(r'({.*})', first_script_content)
+                if json_match:
+                    listing_ids = re.findall(r'"listing_id":\s*\[([^\]]+)]', first_script_content)
+                    if listing_ids:
+                        listing_ids = [int(id.strip()) for id in listing_ids[0].split(',')]
+                        csv_file_path1 = 'building_information1.csv'
+                        csv_file_path2 = 'validated_information.csv'
+                        csv_file_path3 = 'project_information.csv'
+                        
 
-                building_info_headers = ['id', 'Building Name', 'Year of Completion', 'Total Floors', 'Swimming Pools',
-                         'Total Parking Spaces', 'Total Building Area', 'Elevators']
+                        building_info_headers = ['id', 'Building Name', 'Year of Completion', 'Total Floors', 'Swimming Pools',
+                                'Total Parking Spaces', 'Total Building Area', 'Elevators','Retail Centres']
 
-                validated_info_headers = ['id', 'Developer', 'Ownership', 'Built-up Area', 'Usage',
-                           'Balcony Size', 'Total Building Area', 'Parking Availability']
+                        validated_info_headers = ['id', 'Developer', 'Ownership', 'Built-up Area', 'Usage',
+                                'Balcony Size', 'Total Building Area', 'Parking Availability']
 
-                project_info_headers = ['id', 'Project Name', 'Project Status', 'Last Inspected',
-                         'Completion', 'Handover']
+                        project_info_headers = ['id', 'Project Name', 'Project Status', 'Last Inspected',
+                                'Completion', 'Handover']
 
-                
-                for i in range(len(listing_ids)):
-                    url = f'https://www.bayut.com/property/details-{listing_ids[i]}.html'
-                    scrape_and_write_data(url, building_info_headers, csv_file_path1)
+                        
+                        for i in range(len(listing_ids)):
+                            url = f'https://www.bayut.com/property/details-{listing_ids[i]}.html'
+                            scrape_and_write_data(url, building_info_headers, csv_file_path1)
+                            scrape_and_write_data(url, validated_info_headers, csv_file_path2)
+                            scrape_and_write_data(url, project_info_headers, csv_file_path3)
 
-                
-                for i in range(len(listing_ids)):
-                    url = f'https://www.bayut.com/property/details-{listing_ids[i]}.html'
-                    scrape_and_write_data(url, validated_info_headers, csv_file_path2)
-                    
-
-                
-                for i in range(len(listing_ids)):
-                    url = f'https://www.bayut.com/property/details-{listing_ids[i]}.html'
-                    scrape_and_write_data(url, project_info_headers, csv_file_path3)
 
 
 

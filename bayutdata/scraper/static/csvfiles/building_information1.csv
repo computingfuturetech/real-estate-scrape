@@ -1,0 +1,569 @@
+id      ,Building Name                   ,Year of Completion ,Total Floors ,Swimming Pools ,Total Parking Spaces ,Total Building Area ,Elevators ,Retail Centres
+8433264 ,Stella Maris                    ,2022               ,58           ,1              ,379                  ,"940,502 sqft"      ,8         ,4
+8320244 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8110034 ,BAYSIDE                         ,2010               ,24           ,NA             ,NA                   ,"469,357 sqft"      ,NA        ,6
+8373001 ,IRIS BLUE                       ,2011               ,29           ,NA             ,NA                   ,"211,465 sqft"      ,NA        ,6
+8443128 ,23 MARINA                       ,2012               ,62           ,NA             ,NA                   ,"886,537 sqft"      ,NA        ,NA
+8308351 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8213579 ,WEST AVENUE                     ,2014               ,35           ,NA             ,NA                   ,"267,598 sqft"      ,NA        ,5
+8468750 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8505143 ,Delphine W3                     ,2009               ,23           ,NA             ,985                  ,"133,898 sqft"      ,2         ,NA
+8508132 ,Sulafa Tower                    ,2010               ,67           ,NA             ,NA                   ,"846,914 sqft"      ,NA        ,1
+8090851 ,Delphine W3                     ,2009               ,23           ,NA             ,985                  ,"133,898 sqft"      ,2         ,NA
+8377156 ,MARINA 101                      ,NA                 ,61           ,NA             ,NA                   ,"1,379,605 sqft"    ,NA        ,NA
+8454831 ,Torch Tower                     ,2011               ,76           ,NA             ,NA                   ,"852,218 sqft"      ,NA        ,6
+8205691 ,Stella Maris                    ,2022               ,58           ,1              ,379                  ,"940,502 sqft"      ,8         ,4
+8197533 ,Cavalli Casa Tower              ,NA                 ,72           ,1              ,640                  ,"1,908,955 sqft"    ,19        ,3
+8463308 ,DAMAC HEIGHTS                   ,2018               ,80           ,1              ,703                  ,"884,073 sqft"      ,12        ,3
+8009124 ,DAMAC HEIGHTS                   ,2018               ,80           ,1              ,703                  ,"884,073 sqft"      ,12        ,3
+8501721 ,THE RESIDENCE AT MARINA GATE 2  ,2019               ,61           ,1              ,770                  ,"703,394 sqft"      ,11        ,15
+8444495 ,Studio One                      ,2019               ,32           ,1              ,424                  ,"264,403 sqft"      ,6         ,5
+8476557 ,THE RESIDENCE AT MARINA GATE 2  ,2019               ,61           ,1              ,770                  ,"703,394 sqft"      ,11        ,15
+6976321 ,MANCHESTER TOWER                ,2008               ,33           ,NA             ,NA                   ,"257,766 sqft"      ,NA        ,3
+8352021 ,TIME PLACE TOWER                ,2009               ,36           ,NA             ,NA                   ,"321,210 sqft"      ,NA        ,4
+8388395 ,TFG ONE HOTEL                   ,2018               ,23           ,1              ,106                  ,"217,036 sqft"      ,6         ,5
+8465354 ,MAG218                          ,2010               ,57           ,NA             ,NA                   ,"689,176 sqft"      ,NA        ,7
+8427309 ,ZUMURUD                         ,2010               ,30           ,NA             ,NA                   ,"279,413 sqft"      ,NA        ,3
+8473257 ,MARINA SUITES                   ,2015               ,16           ,1              ,123                  ,"132,379 sqft"      ,4         ,1
+8029846 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+8290256 ,Ciel                            ,NA                 ,1            ,1              ,326                  ,"1,363,152 sqft"    ,19        ,8
+8473400 ,DEC TOWERS T2                   ,2009               ,28           ,NA             ,NA                   ,"290,902 sqft"      ,NA        ,8
+7115187 ,MARINA CROWN TOWER              ,2007               ,55           ,1              ,451                  ,"983,257 sqft"      ,7         ,3
+8014737 ,EMIRATES CROWN TOWER            ,2009               ,62           ,NA             ,NA                   ,"1,326,014 sqft"    ,NA        ,6
+8248295 ,DAMAC HEIGHTS                   ,2018               ,80           ,1              ,703                  ,"884,073 sqft"      ,12        ,3
+8221869 ,MARINA DIAMOND 4                ,2008               ,20           ,NA             ,NA                   ,"177,922 sqft"      ,NA        ,4
+7365443 ,Sulafa Tower                    ,2010               ,67           ,NA             ,NA                   ,"846,914 sqft"      ,NA        ,1
+8436813 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+6134587 ,OCEAN HEIGHTS                   ,2010               ,75           ,NA             ,NA                   ,"810,161 sqft"      ,NA        ,1
+7325333 ,Dubai Marina Mall Hotel         ,2009               ,31           ,NA             ,NA                   ,"1,565,456 sqft"    ,NA        ,12
+8227536 ,Marina Pinnacle                 ,2011               ,66           ,NA             ,NA                   ,"849,284 sqft"      ,NA        ,7
+8458676 ,OCEAN HEIGHTS                   ,2010               ,75           ,NA             ,NA                   ,"810,161 sqft"      ,NA        ,1
+8219045 ,MARINA VIEW TOWERS B            ,2009               ,14           ,NA             ,NA                   ,"170,941 sqft"      ,NA        ,11
+8158259 ,DAMAC HEIGHTS                   ,2018               ,80           ,1              ,703                  ,"884,073 sqft"      ,12        ,3
+8462802 ,CAYAN TOWER                     ,2013               ,68           ,NA             ,NA                   ,"720,602 sqft"      ,NA        ,7
+8376239 ,Studio One                      ,2019               ,32           ,1              ,424                  ,"264,403 sqft"      ,6         ,5
+8214591 ,DAMAC HEIGHTS                   ,2018               ,80           ,1              ,703                  ,"884,073 sqft"      ,12        ,3
+8405774 ,Paloma x3                       ,2009               ,40           ,NA             ,985                  ,"275,870 sqft"      ,3         ,NA
+8438544 ,CAYAN TOWER                     ,2013               ,68           ,NA             ,NA                   ,"720,602 sqft"      ,NA        ,7
+8158081 ,CAYAN TOWER                     ,2013               ,68           ,NA             ,NA                   ,"720,602 sqft"      ,NA        ,7
+8432995 ,52|42 Tower 2                   ,2020               ,38           ,NA             ,245                  ,"1,465,941 sqft"    ,5         ,NA
+8253176 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+8253930 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+8251403 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+8281843 ,WEST AVENUE                     ,2014               ,35           ,NA             ,NA                   ,"267,598 sqft"      ,NA        ,5
+8453941 ,Dubai Marina Mall Hotel         ,2009               ,31           ,NA             ,NA                   ,"1,565,456 sqft"    ,NA        ,12
+8129887 ,MARINA TOWER                    ,2013               ,33           ,NA             ,NA                   ,"330,421 sqft"      ,NA        ,5
+7726031 ,MARINA TERRACE                  ,2008               ,36           ,NA             ,NA                   ,"305,965 sqft"      ,NA        ,14
+8395553 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8388838 ,MANCHESTER TOWER                ,2008               ,33           ,NA             ,NA                   ,"257,766 sqft"      ,NA        ,3
+7829719 ,AL SEEF 1                       ,2005               ,41           ,NA             ,NA                   ,"568,337 sqft"      ,NA        ,8
+8378957 ,Stella Maris                    ,2022               ,58           ,1              ,379                  ,"940,502 sqft"      ,8         ,4
+5635820 ,EMIRATES CROWN TOWER            ,2009               ,62           ,NA             ,NA                   ,"1,326,014 sqft"    ,NA        ,6
+7454384 ,MARINA WHARF II                 ,2014               ,30           ,1              ,200                  ,"223,642 sqft"      ,5         ,13
+8045618 ,Marina Quay North               ,2010               ,10           ,NA             ,NA                   ,"204,945 sqft"      ,NA        ,NA
+8280253 ,DORRA BAY                       ,2009               ,22           ,NA             ,NA                   ,"297,040 sqft"      ,NA        ,19
+8436696 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8223739 ,BOTANICA TOWER-1                ,2011               ,36           ,NA             ,NA                   ,"345,350 sqft"      ,NA        ,6
+8439017 ,No.9                            ,2017               ,36           ,2              ,269                  ,"255,330 sqft"      ,7         ,7
+8160684 ,EMIRATES CROWN TOWER            ,2009               ,62           ,NA             ,NA                   ,"1,326,014 sqft"    ,NA        ,6
+8427885 ,BOTANICA TOWER-1                ,2011               ,36           ,NA             ,NA                   ,"345,350 sqft"      ,NA        ,6
+8147924 ,MARINA VIEW TOWER A             ,2009               ,26           ,NA             ,NA                   ,"247,478 sqft"      ,NA        ,11
+8410997 ,DAMAC HEIGHTS                   ,2018               ,80           ,1              ,703                  ,"884,073 sqft"      ,12        ,3
+8268007 ,Jumeirah Living Marina Gate     ,2020               ,61           ,2              ,729                  ,"1,403,677 sqft"    ,12        ,16
+8430398 ,Marina Pinnacle                 ,2011               ,66           ,NA             ,NA                   ,"849,284 sqft"      ,NA        ,7
+8425603 ,DAMAC HEIGHTS                   ,2018               ,80           ,1              ,703                  ,"884,073 sqft"      ,12        ,3
+8043769 ,MANCHESTER TOWER                ,2008               ,33           ,NA             ,NA                   ,"257,766 sqft"      ,NA        ,3
+8425498 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+7945989 ,Sparkle Tower 2                 ,2019               ,14           ,2              ,126                  ,"107,473 sqft"      ,3         ,NA
+6344109 ,BAY CENTRAL 2                   ,2012               ,38           ,NA             ,NA                   ,"277,517 sqft"      ,NA        ,NA
+8407269 ,Sparkle Tower 3                 ,2019               ,6            ,2              ,59                   ,"42,166 sqft"       ,3         ,10
+8428820 ,OCEAN HEIGHTS                   ,2010               ,75           ,NA             ,NA                   ,"810,161 sqft"      ,NA        ,1
+7881066 ,CAYAN TOWER                     ,2013               ,68           ,NA             ,NA                   ,"720,602 sqft"      ,NA        ,7
+8328529 ,Al Majara 2                     ,2007               ,33           ,NA             ,NA                   ,"283,672 sqft"      ,NA        ,2
+8415767 ,Ciel                            ,NA                 ,1            ,1              ,326                  ,"1,363,152 sqft"    ,19        ,8
+8427555 ,DM Yass                         ,2008               ,25           ,NA             ,NA                   ,"326,421 sqft"      ,NA        ,1
+5707965 ,BOTANICA TOWER-1                ,2011               ,36           ,NA             ,NA                   ,"345,350 sqft"      ,NA        ,6
+8388951 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+6126627 ,Orra Marina                     ,2012               ,31           ,NA             ,NA                   ,"294,679 sqft"      ,NA        ,6
+8186008 ,OCEAN HEIGHTS                   ,2010               ,75           ,NA             ,NA                   ,"810,161 sqft"      ,NA        ,1
+8320267 ,Stella Maris                    ,2022               ,58           ,1              ,379                  ,"940,502 sqft"      ,8         ,4
+8320268 ,Stella Maris                    ,2022               ,58           ,1              ,379                  ,"940,502 sqft"      ,8         ,4
+8320248 ,Stella Maris                    ,2022               ,58           ,1              ,379                  ,"940,502 sqft"      ,8         ,4
+8320266 ,Stella Maris                    ,2022               ,58           ,1              ,379                  ,"940,502 sqft"      ,8         ,4
+8396182 ,Torch Tower                     ,2011               ,76           ,NA             ,NA                   ,"852,218 sqft"      ,NA        ,6
+8348723 ,Silverene Towers A              ,2011               ,34           ,NA             ,NA                   ,"342,968 sqft"      ,NA        ,4
+8420635 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8331310 ,Cavalli Casa Tower              ,NA                 ,72           ,1              ,640                  ,"1,908,955 sqft"    ,19        ,3
+6113545 ,No.9                            ,2017               ,36           ,2              ,269                  ,"255,330 sqft"      ,7         ,7
+5333448 ,IRIS BLUE                       ,2011               ,29           ,NA             ,NA                   ,"211,465 sqft"      ,NA        ,6
+8404224 ,Studio One                      ,2019               ,32           ,1              ,424                  ,"264,403 sqft"      ,6         ,5
+8381901 ,LIV RESIDENCE                   ,2020               ,28           ,1              ,205                  ,"427,447 sqft"      ,4         ,8
+8382043 ,LIV RESIDENCE                   ,2020               ,28           ,1              ,205                  ,"427,447 sqft"      ,4         ,8
+7866957 ,Marina Pinnacle                 ,2011               ,66           ,NA             ,NA                   ,"849,284 sqft"      ,NA        ,7
+8415368 ,Marina Quay North               ,2010               ,10           ,NA             ,NA                   ,"204,945 sqft"      ,NA        ,NA
+8407671 ,Marina Pinnacle                 ,2011               ,66           ,NA             ,NA                   ,"849,284 sqft"      ,NA        ,7
+8380210 ,DEC TOWERS T1                   ,2009               ,22           ,NA             ,NA                   ,"216,192 sqft"      ,NA        ,NA
+8072294 ,AZURE                           ,2008               ,6            ,NA             ,NA                   ,"120,642 sqft"      ,NA        ,1
+8160897 ,DREAM TOWER                     ,2010               ,30           ,NA             ,NA                   ,"500,579 sqft"      ,NA        ,8
+8395693 ,MANCHESTER TOWER                ,2008               ,33           ,NA             ,NA                   ,"257,766 sqft"      ,NA        ,3
+8376051 ,PARK ISLAND SANIBEL             ,2010               ,28           ,1              ,205                  ,"370,407 sqft"      ,3         ,NA
+7558971 ,MARINA VIEW TOWER A             ,2009               ,26           ,NA             ,NA                   ,"247,478 sqft"      ,NA        ,11
+8251357 ,DREAM TOWER                     ,2010               ,30           ,NA             ,NA                   ,"500,579 sqft"      ,NA        ,8
+8384177 ,MARINA PEARL                    ,2009               ,6            ,NA             ,NA                   ,"71,217 sqft"       ,NA        ,9
+8320265 ,Stella Maris                    ,2022               ,58           ,1              ,379                  ,"940,502 sqft"      ,8         ,4
+8088967 ,ESCAN MARINA TOWER              ,2016               ,31           ,NA             ,NA                   ,"278,342 sqft"      ,NA        ,2
+8392950 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8160665 ,TRIDENT GRAND RESIDENCE         ,2010               ,40           ,NA             ,NA                   ,"530,884 sqft"      ,NA        ,22
+8229586 ,Studio One                      ,2019               ,32           ,1              ,424                  ,"264,403 sqft"      ,6         ,5
+8278673 ,OPAL TOWER                      ,2009               ,30           ,NA             ,NA                   ,"261,612 sqft"      ,NA        ,NA
+8361588 ,Sulafa Tower                    ,2010               ,67           ,NA             ,NA                   ,"846,914 sqft"      ,NA        ,1
+7559113 ,CAYAN TOWER                     ,2013               ,68           ,NA             ,NA                   ,"720,602 sqft"      ,NA        ,7
+8377107 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8296510 ,SHEMARA W2                      ,2009               ,32           ,NA             ,985                  ,"207,736 sqft"      ,3         ,NA
+8305653 ,ROYAL OCEANIC-1                 ,2009               ,32           ,NA             ,NA                   ,"370,459 sqft"      ,NA        ,7
+7870784 ,Cavalli Casa Tower              ,NA                 ,72           ,1              ,640                  ,"1,908,955 sqft"    ,19        ,3
+8344342 ,Sparkle Tower 1                 ,2019               ,29           ,2              ,231                  ,"268,322 sqft"      ,5         ,NA
+8346772 ,Sparkle Tower 2                 ,2019               ,14           ,2              ,126                  ,"107,473 sqft"      ,3         ,NA
+8344506 ,Sparkle Tower 2                 ,2019               ,14           ,2              ,126                  ,"107,473 sqft"      ,3         ,NA
+8086329 ,OCEAN HEIGHTS                   ,2010               ,75           ,NA             ,NA                   ,"810,161 sqft"      ,NA        ,1
+8203163 ,ESCAN MARINA TOWER              ,2016               ,31           ,NA             ,NA                   ,"278,342 sqft"      ,NA        ,2
+8102975 ,DAMAC HEIGHTS                   ,2018               ,80           ,1              ,703                  ,"884,073 sqft"      ,12        ,3
+8338094 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8339448 ,MARINA SHORES                   ,NA                 ,11           ,1              ,551                  ,"1,133,555 sqft"    ,12        ,7
+7979595 ,OPAL TOWER                      ,2009               ,30           ,NA             ,NA                   ,"261,612 sqft"      ,NA        ,NA
+8251862 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+7850580 ,Ciel                            ,NA                 ,1            ,1              ,326                  ,"1,363,152 sqft"    ,19        ,8
+8316451 ,ROYAL OCEANIC-1                 ,2009               ,32           ,NA             ,NA                   ,"370,459 sqft"      ,NA        ,7
+7690899 ,CAYAN TOWER                     ,2013               ,68           ,NA             ,NA                   ,"720,602 sqft"      ,NA        ,7
+8166319 ,Jumeirah Living Marina Gate     ,2020               ,61           ,2              ,729                  ,"1,403,677 sqft"    ,12        ,16
+8320172 ,MARINA SHORES                   ,NA                 ,11           ,1              ,551                  ,"1,133,555 sqft"    ,12        ,7
+8288264 ,ZUMURUD                         ,2010               ,30           ,NA             ,NA                   ,"279,413 sqft"      ,NA        ,3
+7940256 ,Cavalli Casa Tower              ,NA                 ,72           ,1              ,640                  ,"1,908,955 sqft"    ,19        ,3
+8105788 ,LA RIVIERA TOWER                ,2008               ,34           ,NA             ,NA                   ,"269,282 sqft"      ,NA        ,3
+8498357 ,Beauport X1                     ,2009               ,25           ,NA             ,985                  ,"138,520 sqft"      ,3         ,NA
+8508256 ,MARINA DIAMOND 4                ,2008               ,20           ,NA             ,NA                   ,"177,922 sqft"      ,NA        ,4
+8509465 ,OPAL TOWER                      ,2009               ,30           ,NA             ,NA                   ,"261,612 sqft"      ,NA        ,NA
+8498876 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8497546 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8474781 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8495308 ,MARINA DIAMOND-2                ,2008               ,16           ,NA             ,NA                   ,"179,373 sqft"      ,NA        ,5
+8475015 ,PANORAMIC                       ,2009               ,9            ,NA             ,NA                   ,"73,580 sqft"       ,NA        ,4
+8462600 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+8466880 ,MARINA DIAMOND - A              ,2008               ,15           ,NA             ,NA                   ,"124,220 sqft"      ,NA        ,5
+8463147 ,SAHAB-2                         ,2007               ,73           ,NA             ,NA                   ,"330,196 sqft"      ,NA        ,NA
+8464054 ,Horizon Tower                   ,2008               ,42           ,NA             ,NA                   ,"411,917 sqft"      ,NA        ,1
+8403460 ,Dubai Marina Mall Hotel         ,2009               ,31           ,NA             ,NA                   ,"1,565,456 sqft"    ,NA        ,12
+8421473 ,THE WAVES B                     ,2008               ,12           ,NA             ,NA                   ,"159,627 sqft"      ,NA        ,10
+8428787 ,BAY CENTRAL 2                   ,2012               ,38           ,NA             ,NA                   ,"277,517 sqft"      ,NA        ,NA
+8407213 ,Dubai Marina Mall Hotel         ,2009               ,31           ,NA             ,NA                   ,"1,565,456 sqft"    ,NA        ,12
+8393643 ,MARINA DIAMOND - A              ,2008               ,15           ,NA             ,NA                   ,"124,220 sqft"      ,NA        ,5
+8394665 ,EMIRATES CROWN TOWER            ,2009               ,62           ,NA             ,NA                   ,"1,326,014 sqft"    ,NA        ,6
+8400231 ,Stella Maris                    ,2022               ,58           ,1              ,379                  ,"940,502 sqft"      ,8         ,4
+8393053 ,THE WAVES A                     ,2008               ,22           ,NA             ,NA                   ,"216,005 sqft"      ,NA        ,NA
+8433157 ,No.9                            ,2017               ,36           ,2              ,269                  ,"255,330 sqft"      ,7         ,7
+8361014 ,Sulafa Tower                    ,2010               ,67           ,NA             ,NA                   ,"846,914 sqft"      ,NA        ,1
+8382216 ,23 MARINA                       ,2012               ,62           ,NA             ,NA                   ,"886,537 sqft"      ,NA        ,NA
+8344509 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+8348095 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8461603 ,52|42 Tower 2                   ,2020               ,38           ,NA             ,245                  ,"1,465,941 sqft"    ,5         ,NA
+8335231 ,MAG218                          ,2010               ,57           ,NA             ,NA                   ,"689,176 sqft"      ,NA        ,7
+8433508 ,Torch Tower                     ,2011               ,76           ,NA             ,NA                   ,"852,218 sqft"      ,NA        ,6
+8338339 ,OPAL TOWER                      ,2009               ,30           ,NA             ,NA                   ,"261,612 sqft"      ,NA        ,NA
+8325449 ,Beauport X1                     ,2009               ,25           ,NA             ,985                  ,"138,520 sqft"      ,3         ,NA
+8309213 ,TRIDENT GRAND RESIDENCE         ,2010               ,40           ,NA             ,NA                   ,"530,884 sqft"      ,NA        ,22
+8316275 ,The Jewels T2                   ,2009               ,18           ,NA             ,NA                   ,"153,653 sqft"      ,NA        ,2
+8324794 ,Sky View Tower                  ,2011               ,27           ,NA             ,NA                   ,"231,557 sqft"      ,NA        ,6
+8283156 ,TFG MARINA                      ,2015               ,33           ,NA             ,NA                   ,"241,220 sqft"      ,NA        ,4
+8277079 ,TFG ONE HOTEL                   ,2018               ,23           ,1              ,106                  ,"217,036 sqft"      ,6         ,5
+8281693 ,MARINA RESIDENCE A              ,2008               ,16           ,NA             ,NA                   ,"81,708 sqft"       ,NA        ,NA
+8250569 ,Sulafa Tower                    ,2010               ,67           ,NA             ,NA                   ,"846,914 sqft"      ,NA        ,1
+8405772 ,DEC TOWERS T3                   ,2009               ,1            ,NA             ,NA                   ,"29,540 sqft"       ,NA        ,NA
+8306764 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8264433 ,Jumeirah Living Marina Gate     ,2020               ,61           ,2              ,729                  ,"1,403,677 sqft"    ,12        ,16
+8376240 ,Studio One                      ,2019               ,32           ,1              ,424                  ,"264,403 sqft"      ,6         ,5
+8259787 ,Torch Tower                     ,2011               ,76           ,NA             ,NA                   ,"852,218 sqft"      ,NA        ,6
+8264917 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8215223 ,Dubai Marina Mall Hotel         ,2009               ,31           ,NA             ,NA                   ,"1,565,456 sqft"    ,NA        ,12
+8263028 ,Marina Quay North               ,2010               ,10           ,NA             ,NA                   ,"204,945 sqft"      ,NA        ,NA
+8238629 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8315067 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8195562 ,Al Majara 3                     ,2007               ,10           ,NA             ,NA                   ,"70,040 sqft"       ,NA        ,2
+8206986 ,MARINA VIEW TOWER A             ,2009               ,26           ,NA             ,NA                   ,"247,478 sqft"      ,NA        ,11
+8206536 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8181822 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8158104 ,OCEAN HEIGHTS                   ,2010               ,75           ,NA             ,NA                   ,"810,161 sqft"      ,NA        ,1
+8200958 ,MARINA TERRACE                  ,2008               ,36           ,NA             ,NA                   ,"305,965 sqft"      ,NA        ,14
+8235960 ,Al Majara 2                     ,2007               ,33           ,NA             ,NA                   ,"283,672 sqft"      ,NA        ,2
+8259650 ,52|42 Tower 1                   ,2020               ,52           ,1              ,379                  ,"1,465,941 sqft"    ,6         ,NA
+8129575 ,MARINA DIAMOND - B              ,2008               ,3            ,NA             ,NA                   ,"13,392 sqft"       ,NA        ,3
+8162635 ,ESCAN MARINA TOWER              ,2016               ,31           ,NA             ,NA                   ,"278,342 sqft"      ,NA        ,2
+8140381 ,ALMASS                          ,2008               ,29           ,NA             ,NA                   ,"706,961 sqft"      ,NA        ,3
+8104347 ,DEC TOWERS T2                   ,2009               ,28           ,NA             ,NA                   ,"290,902 sqft"      ,NA        ,8
+8118650 ,Paloma x3                       ,2009               ,40           ,NA             ,985                  ,"275,870 sqft"      ,3         ,NA
+8096062 ,THE RESIDENCES AT MARINA GATE 1 ,2018               ,47           ,1              ,640                  ,"610,210 sqft"      ,10        ,16
+8037920 ,23 MARINA                       ,2012               ,62           ,NA             ,NA                   ,"886,537 sqft"      ,NA        ,NA
+8036209 ,MAG218                          ,2010               ,57           ,NA             ,NA                   ,"689,176 sqft"      ,NA        ,7
+8493288 ,LIV RESIDENCE                   ,2020               ,28           ,1              ,205                  ,"427,447 sqft"      ,4         ,8
+7997869 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8075966 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8045281 ,Marina Pinnacle                 ,2011               ,66           ,NA             ,NA                   ,"849,284 sqft"      ,NA        ,7
+8040172 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8204838 ,TFG MARINA                      ,2015               ,33           ,NA             ,NA                   ,"241,220 sqft"      ,NA        ,4
+7946606 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+7973377 ,Studio One                      ,2019               ,32           ,1              ,424                  ,"264,403 sqft"      ,6         ,5
+7952760 ,CAYAN TOWER                     ,2013               ,68           ,NA             ,NA                   ,"720,602 sqft"      ,NA        ,7
+7923014 ,MARINA DIAMOND-3                ,2008               ,16           ,NA             ,NA                   ,"138,330 sqft"      ,NA        ,5
+7970880 ,SAHAB-1                         ,2007               ,24           ,NA             ,NA                   ,"147,836 sqft"      ,NA        ,1
+7935961 ,Dubai Marina Mall Hotel         ,2009               ,31           ,NA             ,NA                   ,"1,565,456 sqft"    ,NA        ,12
+8315445 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+7961484 ,BOTANICA TOWER-1                ,2011               ,36           ,NA             ,NA                   ,"345,350 sqft"      ,NA        ,6
+8014693 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8403454 ,Orra Marina                     ,2012               ,31           ,NA             ,NA                   ,"294,679 sqft"      ,NA        ,6
+8468886 ,DM MESK                         ,2008               ,38           ,NA             ,NA                   ,"498,918 sqft"      ,NA        ,4
+7909943 ,OPAL TOWER                      ,2009               ,30           ,NA             ,NA                   ,"261,612 sqft"      ,NA        ,NA
+7880454 ,AL SEEF 1                       ,2005               ,41           ,NA             ,NA                   ,"568,337 sqft"      ,NA        ,8
+8465082 ,K G TOWER                       ,2008               ,19           ,NA             ,NA                   ,"168,414 sqft"      ,NA        ,3
+8316483 ,Horizon Tower                   ,2008               ,42           ,NA             ,NA                   ,"411,917 sqft"      ,NA        ,1
+7850513 ,MAG218                          ,2010               ,57           ,NA             ,NA                   ,"689,176 sqft"      ,NA        ,7
+8422863 ,PARK ISLAND BONAIRE             ,2010               ,32           ,1              ,190                  ,"433,754 sqft"      ,3         ,NA
+7790021 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+7812040 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8093526 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8446665 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8406212 ,Al Majara 2                     ,2007               ,33           ,NA             ,NA                   ,"283,672 sqft"      ,NA        ,2
+8173757 ,Marina Quay West                ,2010               ,38           ,NA             ,NA                   ,"293,542 sqft"      ,NA        ,NA
+8493291 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8320345 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8431500 ,MANCHESTER TOWER                ,2008               ,33           ,NA             ,NA                   ,"257,766 sqft"      ,NA        ,3
+7733118 ,SAHAB-1                         ,2007               ,24           ,NA             ,NA                   ,"147,836 sqft"      ,NA        ,1
+8404297 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8403461 ,Orra Marina                     ,2012               ,31           ,NA             ,NA                   ,"294,679 sqft"      ,NA        ,6
+7493385 ,Jumeirah Living Marina Gate     ,2020               ,61           ,2              ,729                  ,"1,403,677 sqft"    ,12        ,16
+8465737 ,MARINA PARK                     ,2009               ,6            ,NA             ,NA                   ,"81,313 sqft"       ,NA        ,3
+8370937 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+7366646 ,DEC TOWERS T2                   ,2009               ,28           ,NA             ,NA                   ,"290,902 sqft"      ,NA        ,8
+8502909 ,Sparkle Tower 3                 ,2019               ,6            ,2              ,59                   ,"42,166 sqft"       ,3         ,10
+6909547 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8234864 ,THE RESIDENCE AT MARINA GATE 2  ,2019               ,61           ,1              ,770                  ,"703,394 sqft"      ,11        ,15
+8320346 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8183117 ,SAHAB-2                         ,2007               ,73           ,NA             ,NA                   ,"330,196 sqft"      ,NA        ,NA
+6709761 ,ESCAN MARINA TOWER              ,2016               ,31           ,NA             ,NA                   ,"278,342 sqft"      ,NA        ,2
+8087260 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+6533180 ,TRIDENT GRAND RESIDENCE         ,2010               ,40           ,NA             ,NA                   ,"530,884 sqft"      ,NA        ,22
+8251505 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+6794292 ,MARINA MANSIONS                 ,2008               ,31           ,NA             ,NA                   ,"339,189 sqft"      ,NA        ,5
+6087558 ,Stella Maris                    ,2022               ,58           ,1              ,379                  ,"940,502 sqft"      ,8         ,4
+8136996 ,Orra Marina                     ,2012               ,31           ,NA             ,NA                   ,"294,679 sqft"      ,NA        ,6
+7917968 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+5801750 ,MARINA HEIGHTS 1                ,2007               ,52           ,NA             ,NA                   ,"579,717 sqft"      ,NA        ,7
+7487947 ,Orra Marina                     ,2012               ,31           ,NA             ,NA                   ,"294,679 sqft"      ,NA        ,6
+7404696 ,MAG218                          ,2010               ,57           ,NA             ,NA                   ,"689,176 sqft"      ,NA        ,7
+5430551 ,Al Majara 1                     ,2007               ,29           ,NA             ,NA                   ,"254,302 sqft"      ,NA        ,1
+8519745 ,AL SEEF 1                       ,2005               ,41           ,NA             ,NA                   ,"568,337 sqft"      ,NA        ,8
+6822547 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+8515747 ,DORRA BAY                       ,2009               ,22           ,NA             ,NA                   ,"297,040 sqft"      ,NA        ,19
+8464138 ,BAY CENTRAL 2                   ,2012               ,38           ,NA             ,NA                   ,"277,517 sqft"      ,NA        ,NA
+8443478 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8463613 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+8384842 ,Cavalli Casa Tower              ,NA                 ,72           ,1              ,640                  ,"1,908,955 sqft"    ,19        ,3
+8355370 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+8280025 ,MARINA SHORES                   ,NA                 ,11           ,1              ,551                  ,"1,133,555 sqft"    ,12        ,7
+8303649 ,MARINA SHORES                   ,NA                 ,11           ,1              ,551                  ,"1,133,555 sqft"    ,12        ,7
+8261833 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+8281987 ,Ciel                            ,NA                 ,1            ,1              ,326                  ,"1,363,152 sqft"    ,19        ,8
+8202990 ,DEC TOWERS T1                   ,2009               ,22           ,NA             ,NA                   ,"216,192 sqft"      ,NA        ,NA
+8264868 ,Cavalli Casa Tower              ,NA                 ,72           ,1              ,640                  ,"1,908,955 sqft"    ,19        ,3
+8167027 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+8126565 ,Al Majara 1                     ,2007               ,29           ,NA             ,NA                   ,"254,302 sqft"      ,NA        ,1
+7741191 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+8496976 ,Stella Maris                    ,2022               ,58           ,1              ,379                  ,"940,502 sqft"      ,8         ,4
+8491137 ,Jumeirah Living Marina Gate     ,2020               ,61           ,2              ,729                  ,"1,403,677 sqft"    ,12        ,16
+7918677 ,THE RESIDENCE AT MARINA GATE 2  ,2019               ,61           ,1              ,770                  ,"703,394 sqft"      ,11        ,15
+8215083 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+7860999 ,MARINA SHORES                   ,NA                 ,11           ,1              ,551                  ,"1,133,555 sqft"    ,12        ,7
+7765017 ,CONTINENTAL TOWER               ,2015               ,31           ,1              ,276                  ,"286,305 sqft"      ,5         ,10
+8375919 ,Silverene Towers A              ,2011               ,34           ,NA             ,NA                   ,"342,968 sqft"      ,NA        ,4
+7876031 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+7677907 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+7776340 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+7594814 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+7594882 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+8502947 ,Sparkle Tower 3                 ,2019               ,6            ,2              ,59                   ,"42,166 sqft"       ,3         ,10
+7682148 ,LIV RESIDENCE                   ,2020               ,28           ,1              ,205                  ,"427,447 sqft"      ,4         ,8
+8355372 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+8355371 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+6874132 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+6822544 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+7476575 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8250124 ,MARINA MANSIONS                 ,2008               ,31           ,NA             ,NA                   ,"339,189 sqft"      ,NA        ,5
+8293734 ,OCEAN HEIGHTS                   ,2010               ,75           ,NA             ,NA                   ,"810,161 sqft"      ,NA        ,1
+8241181 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8395645 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8349912 ,MARINA 101                      ,NA                 ,61           ,NA             ,NA                   ,"1,379,605 sqft"    ,NA        ,NA
+8514064 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+8474934 ,Jumeirah Living Marina Gate     ,2020               ,61           ,2              ,729                  ,"1,403,677 sqft"    ,12        ,16
+8468945 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+5767131 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+7662923 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8322403 ,TRIDENT GRAND RESIDENCE         ,2010               ,40           ,NA             ,NA                   ,"530,884 sqft"      ,NA        ,22
+7978227 ,MARINA SHORES                   ,NA                 ,11           ,1              ,551                  ,"1,133,555 sqft"    ,12        ,7
+8276394 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8457918 ,PARK ISLAND BLAKELY             ,2010               ,28           ,1              ,165                  ,"366,045 sqft"      ,3         ,NA
+8475745 ,THE WAVES A                     ,2008               ,22           ,NA             ,NA                   ,"216,005 sqft"      ,NA        ,NA
+8270569 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8400704 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8485125 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+8460597 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8469284 ,Al Majara 1                     ,2007               ,29           ,NA             ,NA                   ,"254,302 sqft"      ,NA        ,1
+8464694 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8323625 ,Studio One                      ,2019               ,32           ,1              ,424                  ,"264,403 sqft"      ,6         ,5
+8457231 ,PARK ISLAND BONAIRE             ,2010               ,32           ,1              ,190                  ,"433,754 sqft"      ,3         ,NA
+8427933 ,Delphine W3                     ,2009               ,23           ,NA             ,985                  ,"133,898 sqft"      ,2         ,NA
+8422986 ,Sparkle Tower 2                 ,2019               ,14           ,2              ,126                  ,"107,473 sqft"      ,3         ,NA
+8286055 ,ESCAN MARINA TOWER              ,2016               ,31           ,NA             ,NA                   ,"278,342 sqft"      ,NA        ,2
+8182475 ,DAMAC HEIGHTS                   ,2018               ,80           ,1              ,703                  ,"884,073 sqft"      ,12        ,3
+7982340 ,Silverene Towers A              ,2011               ,34           ,NA             ,NA                   ,"342,968 sqft"      ,NA        ,4
+7621409 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+8419577 ,THE RESIDENCE AT MARINA GATE 2  ,2019               ,61           ,1              ,770                  ,"703,394 sqft"      ,11        ,15
+8428681 ,MARINA DIAMOND-2                ,2008               ,16           ,NA             ,NA                   ,"179,373 sqft"      ,NA        ,5
+7634915 ,ALMASS                          ,2008               ,29           ,NA             ,NA                   ,"706,961 sqft"      ,NA        ,3
+8397890 ,Stella Maris                    ,2022               ,58           ,1              ,379                  ,"940,502 sqft"      ,8         ,4
+8398827 ,Marina Pinnacle                 ,2011               ,66           ,NA             ,NA                   ,"849,284 sqft"      ,NA        ,7
+8439170 ,MARINA SHORES                   ,NA                 ,11           ,1              ,551                  ,"1,133,555 sqft"    ,12        ,7
+8305363 ,MARINA DIAMOND 6 (A)            ,2008               ,20           ,NA             ,NA                   ,"169,611 sqft"      ,NA        ,4
+8197944 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8382244 ,Studio One                      ,2019               ,32           ,1              ,424                  ,"264,403 sqft"      ,6         ,5
+5321833 ,Silverene Towers A              ,2011               ,34           ,NA             ,NA                   ,"342,968 sqft"      ,NA        ,4
+7893767 ,MARINA SHORES                   ,NA                 ,11           ,1              ,551                  ,"1,133,555 sqft"    ,12        ,7
+7918977 ,MARINA SHORES                   ,NA                 ,11           ,1              ,551                  ,"1,133,555 sqft"    ,12        ,7
+8215005 ,BOTANICA TOWER-1                ,2011               ,36           ,NA             ,NA                   ,"345,350 sqft"      ,NA        ,6
+6551450 ,THE RESIDENCE AT MARINA GATE 2  ,2019               ,61           ,1              ,770                  ,"703,394 sqft"      ,11        ,15
+8308645 ,OCEAN HEIGHTS                   ,2010               ,75           ,NA             ,NA                   ,"810,161 sqft"      ,NA        ,1
+8330940 ,Sulafa Tower                    ,2010               ,67           ,NA             ,NA                   ,"846,914 sqft"      ,NA        ,1
+8398727 ,Cavalli Casa Tower              ,NA                 ,72           ,1              ,640                  ,"1,908,955 sqft"    ,19        ,3
+8108799 ,Fairooz                         ,2008               ,21           ,NA             ,NA                   ,"502,170 sqft"      ,NA        ,3
+8337747 ,52|42 Tower 1                   ,2020               ,52           ,1              ,379                  ,"1,465,941 sqft"    ,6         ,NA
+8354192 ,AL Murjan                       ,2008               ,38           ,NA             ,NA                   ,"920,347 sqft"      ,NA        ,4
+8307975 ,THE WAVES A                     ,2008               ,22           ,NA             ,NA                   ,"216,005 sqft"      ,NA        ,NA
+7724935 ,Marina Quay West                ,2010               ,38           ,NA             ,NA                   ,"293,542 sqft"      ,NA        ,NA
+8357926 ,Ciel                            ,NA                 ,1            ,1              ,326                  ,"1,363,152 sqft"    ,19        ,8
+8276356 ,THE POINT TOWER                 ,2009               ,28           ,NA             ,NA                   ,"304,148 sqft"      ,NA        ,5
+8299753 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8320003 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+7989862 ,MARINA CROWN TOWER              ,2007               ,55           ,1              ,451                  ,"983,257 sqft"      ,7         ,3
+8338201 ,MARINA SUITES                   ,2015               ,16           ,1              ,123                  ,"132,379 sqft"      ,4         ,1
+7983754 ,MARINA VIEW TOWER A             ,2009               ,26           ,NA             ,NA                   ,"247,478 sqft"      ,NA        ,11
+8090861 ,MARINA TERRACE                  ,2008               ,36           ,NA             ,NA                   ,"305,965 sqft"      ,NA        ,14
+8065317 ,Marina Pinnacle                 ,2011               ,66           ,NA             ,NA                   ,"849,284 sqft"      ,NA        ,7
+8257869 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+7830458 ,MARINA SAIL                     ,2008               ,25           ,NA             ,NA                   ,"259,700 sqft"      ,NA        ,6
+8507273 ,MARINA DIAMOND 6 (A)            ,2008               ,20           ,NA             ,NA                   ,"169,611 sqft"      ,NA        ,4
+8158219 ,Marina Pinnacle                 ,2011               ,66           ,NA             ,NA                   ,"849,284 sqft"      ,NA        ,7
+8504211 ,ESCAN MARINA TOWER              ,2016               ,31           ,NA             ,NA                   ,"278,342 sqft"      ,NA        ,2
+8291695 ,MARINA TERRACE                  ,2008               ,36           ,NA             ,NA                   ,"305,965 sqft"      ,NA        ,14
+8478276 ,MARINA DIAMOND 5 (A)            ,2008               ,20           ,NA             ,NA                   ,"169,496 sqft"      ,NA        ,3
+8468747 ,MAG218                          ,2010               ,57           ,NA             ,NA                   ,"689,176 sqft"      ,NA        ,7
+8488371 ,OPAL TOWER                      ,2009               ,30           ,NA             ,NA                   ,"261,612 sqft"      ,NA        ,NA
+7723584 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8459214 ,52|42 Tower 1                   ,2020               ,52           ,1              ,379                  ,"1,465,941 sqft"    ,6         ,NA
+8460430 ,52|42 Tower 1                   ,2020               ,52           ,1              ,379                  ,"1,465,941 sqft"    ,6         ,NA
+8453915 ,Marina Pinnacle                 ,2011               ,66           ,NA             ,NA                   ,"849,284 sqft"      ,NA        ,7
+8286109 ,BOTANICA TOWER-1                ,2011               ,36           ,NA             ,NA                   ,"345,350 sqft"      ,NA        ,6
+8057270 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8439000 ,LIV RESIDENCE                   ,2020               ,28           ,1              ,205                  ,"427,447 sqft"      ,4         ,8
+8421658 ,Marina Pinnacle                 ,2011               ,66           ,NA             ,NA                   ,"849,284 sqft"      ,NA        ,7
+8442420 ,TFG ONE HOTEL                   ,2018               ,23           ,1              ,106                  ,"217,036 sqft"      ,6         ,5
+8419968 ,Al Majara 2                     ,2007               ,33           ,NA             ,NA                   ,"283,672 sqft"      ,NA        ,2
+6994751 ,DAMAC HEIGHTS                   ,2018               ,80           ,1              ,703                  ,"884,073 sqft"      ,12        ,3
+8411455 ,ATLANTIC TOWER 2                ,2014               ,19           ,NA             ,NA                   ,"124,927 sqft"      ,NA        ,2
+8397049 ,DAMAC HEIGHTS                   ,2018               ,80           ,1              ,703                  ,"884,073 sqft"      ,12        ,3
+8466559 ,PARK ISLAND SANIBEL             ,2010               ,28           ,1              ,205                  ,"370,407 sqft"      ,3         ,NA
+8433685 ,Dubai Marina Mall Hotel         ,2009               ,31           ,NA             ,NA                   ,"1,565,456 sqft"    ,NA        ,12
+8403324 ,MARINA TOWER                    ,2013               ,33           ,NA             ,NA                   ,"330,421 sqft"      ,NA        ,5
+8404062 ,Al Majara 2                     ,2007               ,33           ,NA             ,NA                   ,"283,672 sqft"      ,NA        ,2
+8424695 ,THE POINT TOWER                 ,2009               ,28           ,NA             ,NA                   ,"304,148 sqft"      ,NA        ,5
+8344878 ,Marina Pinnacle                 ,2011               ,66           ,NA             ,NA                   ,"849,284 sqft"      ,NA        ,7
+8341185 ,DAMAC HEIGHTS                   ,2018               ,80           ,1              ,703                  ,"884,073 sqft"      ,12        ,3
+8384365 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8356003 ,Torch Tower                     ,2011               ,76           ,NA             ,NA                   ,"852,218 sqft"      ,NA        ,6
+8425320 ,ESCAN MARINA TOWER              ,2016               ,31           ,NA             ,NA                   ,"278,342 sqft"      ,NA        ,2
+8318930 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8315514 ,MARINA TERRACE                  ,2008               ,36           ,NA             ,NA                   ,"305,965 sqft"      ,NA        ,14
+8341150 ,THE POINT TOWER                 ,2009               ,28           ,NA             ,NA                   ,"304,148 sqft"      ,NA        ,5
+8314162 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8308539 ,Orra Marina                     ,2012               ,31           ,NA             ,NA                   ,"294,679 sqft"      ,NA        ,6
+8271131 ,BOTANICA TOWER-1                ,2011               ,36           ,NA             ,NA                   ,"345,350 sqft"      ,NA        ,6
+8342467 ,MARINA RESIDENCE B              ,2008               ,16           ,NA             ,NA                   ,"81,704 sqft"       ,NA        ,NA
+8328251 ,TFG ONE HOTEL                   ,2018               ,23           ,1              ,106                  ,"217,036 sqft"      ,6         ,5
+8388836 ,CAYAN TOWER                     ,2013               ,68           ,NA             ,NA                   ,"720,602 sqft"      ,NA        ,7
+8292070 ,Marina Pinnacle                 ,2011               ,66           ,NA             ,NA                   ,"849,284 sqft"      ,NA        ,7
+8288821 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8312655 ,OPAL TOWER                      ,2009               ,30           ,NA             ,NA                   ,"261,612 sqft"      ,NA        ,NA
+8313824 ,PARK ISLAND BLAKELY             ,2010               ,28           ,1              ,165                  ,"366,045 sqft"      ,3         ,NA
+8313482 ,Torch Tower                     ,2011               ,76           ,NA             ,NA                   ,"852,218 sqft"      ,NA        ,6
+8250728 ,SHEMARA W2                      ,2009               ,32           ,NA             ,985                  ,"207,736 sqft"      ,3         ,NA
+8300114 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8233516 ,DAMAC HEIGHTS                   ,2018               ,80           ,1              ,703                  ,"884,073 sqft"      ,12        ,3
+8238296 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8264650 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8246576 ,No.9                            ,2017               ,36           ,2              ,269                  ,"255,330 sqft"      ,7         ,7
+8223817 ,Sulafa Tower                    ,2010               ,67           ,NA             ,NA                   ,"846,914 sqft"      ,NA        ,1
+8247284 ,ROYAL OCEANIC-1                 ,2009               ,32           ,NA             ,NA                   ,"370,459 sqft"      ,NA        ,7
+8259263 ,The Jewels T2                   ,2009               ,18           ,NA             ,NA                   ,"153,653 sqft"      ,NA        ,2
+8237922 ,AL ANBER                        ,2008               ,15           ,NA             ,NA                   ,"223,279 sqft"      ,NA        ,2
+8192053 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+8257760 ,DAMAC HEIGHTS                   ,2018               ,80           ,1              ,703                  ,"884,073 sqft"      ,12        ,3
+8183688 ,BOTANICA TOWER-1                ,2011               ,36           ,NA             ,NA                   ,"345,350 sqft"      ,NA        ,6
+8104723 ,Sparkle Tower 1                 ,2019               ,29           ,2              ,231                  ,"268,322 sqft"      ,5         ,NA
+8343573 ,Sparkle Tower 2                 ,2019               ,14           ,2              ,126                  ,"107,473 sqft"      ,3         ,NA
+8138121 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8117575 ,Silverene Towers A              ,2011               ,34           ,NA             ,NA                   ,"342,968 sqft"      ,NA        ,4
+8238577 ,DORRA BAY                       ,2009               ,22           ,NA             ,NA                   ,"297,040 sqft"      ,NA        ,19
+8117223 ,Silverene Towers B              ,2011               ,27           ,NA             ,NA                   ,"264,007 sqft"      ,NA        ,7
+8117339 ,CAYAN TOWER                     ,2013               ,68           ,NA             ,NA                   ,"720,602 sqft"      ,NA        ,7
+8090758 ,THE RESIDENCE AT MARINA GATE 2  ,2019               ,61           ,1              ,770                  ,"703,394 sqft"      ,11        ,15
+8326479 ,MARINA HEIGHTS 1                ,2007               ,52           ,NA             ,NA                   ,"579,717 sqft"      ,NA        ,7
+8138077 ,PARK ISLAND BLAKELY             ,2010               ,28           ,1              ,165                  ,"366,045 sqft"      ,3         ,NA
+8160565 ,THE RESIDENCE AT MARINA GATE 2  ,2019               ,61           ,1              ,770                  ,"703,394 sqft"      ,11        ,15
+8086913 ,K G TOWER                       ,2008               ,19           ,NA             ,NA                   ,"168,414 sqft"      ,NA        ,3
+8069013 ,Torch Tower                     ,2011               ,76           ,NA             ,NA                   ,"852,218 sqft"      ,NA        ,6
+8073184 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8092838 ,MAG218                          ,2010               ,57           ,NA             ,NA                   ,"689,176 sqft"      ,NA        ,7
+8083840 ,IRIS BLUE                       ,2011               ,29           ,NA             ,NA                   ,"211,465 sqft"      ,NA        ,6
+8068976 ,23 MARINA                       ,2012               ,62           ,NA             ,NA                   ,"886,537 sqft"      ,NA        ,NA
+8168910 ,MARINA VIEW                     ,2007               ,9            ,NA             ,NA                   ,"154,935 sqft"      ,NA        ,NA
+8027194 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8448421 ,Orra Marina                     ,2012               ,31           ,NA             ,NA                   ,"294,679 sqft"      ,NA        ,6
+8044550 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8004647 ,Jumeirah Living Marina Gate     ,2020               ,61           ,2              ,729                  ,"1,403,677 sqft"    ,12        ,16
+8222889 ,THE RESIDENCE AT MARINA GATE 2  ,2019               ,61           ,1              ,770                  ,"703,394 sqft"      ,11        ,15
+8046181 ,THE RESIDENCE AT MARINA GATE 2  ,2019               ,61           ,1              ,770                  ,"703,394 sqft"      ,11        ,15
+8227049 ,THE RESIDENCES AT MARINA GATE 1 ,2018               ,47           ,1              ,640                  ,"610,210 sqft"      ,10        ,16
+7960288 ,ATTESSA X2                      ,2009               ,32           ,NA             ,985                  ,"197,703 sqft"      ,3         ,NA
+8155236 ,K G TOWER                       ,2008               ,19           ,NA             ,NA                   ,"168,414 sqft"      ,NA        ,3
+7974494 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+7983968 ,Sulafa Tower                    ,2010               ,67           ,NA             ,NA                   ,"846,914 sqft"      ,NA        ,1
+7974705 ,Torch Tower                     ,2011               ,76           ,NA             ,NA                   ,"852,218 sqft"      ,NA        ,6
+7973585 ,No.9                            ,2017               ,36           ,2              ,269                  ,"255,330 sqft"      ,7         ,7
+7947596 ,MARINA VIEW TOWER A             ,2009               ,26           ,NA             ,NA                   ,"247,478 sqft"      ,NA        ,11
+8045258 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+8447359 ,ALMASS                          ,2008               ,29           ,NA             ,NA                   ,"706,961 sqft"      ,NA        ,3
+8227305 ,52|42 Tower 1                   ,2020               ,52           ,1              ,379                  ,"1,465,941 sqft"    ,6         ,NA
+8493290 ,PARK ISLAND BLAKELY             ,2010               ,28           ,1              ,165                  ,"366,045 sqft"      ,3         ,NA
+8486576 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8284377 ,MARINA DIAMOND 4                ,2008               ,20           ,NA             ,NA                   ,"177,922 sqft"      ,NA        ,4
+7930850 ,Torch Tower                     ,2011               ,76           ,NA             ,NA                   ,"852,218 sqft"      ,NA        ,6
+7924667 ,Marina Pinnacle                 ,2011               ,66           ,NA             ,NA                   ,"849,284 sqft"      ,NA        ,7
+8489950 ,DM Yass                         ,2008               ,25           ,NA             ,NA                   ,"326,421 sqft"      ,NA        ,1
+8457521 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8316788 ,IRIS BLUE                       ,2011               ,29           ,NA             ,NA                   ,"211,465 sqft"      ,NA        ,6
+7978045 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+7802696 ,PARK ISLAND BLAKELY             ,2010               ,28           ,1              ,165                  ,"366,045 sqft"      ,3         ,NA
+7891551 ,CAYAN TOWER                     ,2013               ,68           ,NA             ,NA                   ,"720,602 sqft"      ,NA        ,7
+8424585 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+7779235 ,MAG218                          ,2010               ,57           ,NA             ,NA                   ,"689,176 sqft"      ,NA        ,7
+7783485 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+8077523 ,LA RIVIERA TOWER                ,2008               ,34           ,NA             ,NA                   ,"269,282 sqft"      ,NA        ,3
+8458395 ,CAYAN TOWER                     ,2013               ,68           ,NA             ,NA                   ,"720,602 sqft"      ,NA        ,7
+8319872 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+7955368 ,BAY CENTRAL 2                   ,2012               ,38           ,NA             ,NA                   ,"277,517 sqft"      ,NA        ,NA
+7608548 ,MARINA DIAMOND 4                ,2008               ,20           ,NA             ,NA                   ,"177,922 sqft"      ,NA        ,4
+8499333 ,MARINA TOWER                    ,2013               ,33           ,NA             ,NA                   ,"330,421 sqft"      ,NA        ,5
+7591510 ,PARK ISLAND BONAIRE             ,2010               ,32           ,1              ,190                  ,"433,754 sqft"      ,3         ,NA
+7536503 ,52|42 Tower 2                   ,2020               ,38           ,NA             ,245                  ,"1,465,941 sqft"    ,5         ,NA
+7873329 ,MARINA STAR                     ,2023               ,25           ,NA             ,NA                   ,"376,005 sqft"      ,NA        ,NA
+7823757 ,Marina Pinnacle                 ,2011               ,66           ,NA             ,NA                   ,"849,284 sqft"      ,NA        ,7
+7613429 ,Sulafa Tower                    ,2010               ,67           ,NA             ,NA                   ,"846,914 sqft"      ,NA        ,1
+8441658 ,ESCAN MARINA TOWER              ,2016               ,31           ,NA             ,NA                   ,"278,342 sqft"      ,NA        ,2
+8442894 ,Silverene Towers A              ,2011               ,34           ,NA             ,NA                   ,"342,968 sqft"      ,NA        ,4
+7477554 ,MARINA CROWN TOWER              ,2007               ,55           ,1              ,451                  ,"983,257 sqft"      ,7         ,3
+8469329 ,SHEMARA W2                      ,2009               ,32           ,NA             ,985                  ,"207,736 sqft"      ,3         ,NA
+8357104 ,ATTESSA X2                      ,2009               ,32           ,NA             ,985                  ,"197,703 sqft"      ,3         ,NA
+8283107 ,WATERFRONT                      ,2009               ,21           ,NA             ,NA                   ,"170,995 sqft"      ,NA        ,NA
+8406596 ,DAMAC HEIGHTS                   ,2018               ,80           ,1              ,703                  ,"884,073 sqft"      ,12        ,3
+7362553 ,EMIRATES CROWN TOWER            ,2009               ,62           ,NA             ,NA                   ,"1,326,014 sqft"    ,NA        ,6
+8220588 ,BAY CENTRAL 2                   ,2012               ,38           ,NA             ,NA                   ,"277,517 sqft"      ,NA        ,NA
+6831657 ,23 MARINA                       ,2012               ,62           ,NA             ,NA                   ,"886,537 sqft"      ,NA        ,NA
+6796526 ,THE RESIDENCES AT MARINA GATE 1 ,2018               ,47           ,1              ,640                  ,"610,210 sqft"      ,10        ,16
+8378022 ,Studio One                      ,2019               ,32           ,1              ,424                  ,"264,403 sqft"      ,6         ,5
+8102506 ,THE RESIDENCE AT MARINA GATE 2  ,2019               ,61           ,1              ,770                  ,"703,394 sqft"      ,11        ,15
+6518661 ,MARINA TOWER                    ,2013               ,33           ,NA             ,NA                   ,"330,421 sqft"      ,NA        ,5
+6837175 ,MANCHESTER TOWER                ,2008               ,33           ,NA             ,NA                   ,"257,766 sqft"      ,NA        ,3
+8530693 ,MARINA WHARF II                 ,2014               ,30           ,1              ,200                  ,"223,642 sqft"      ,5         ,13
+8526260 ,MARINA TERRACE                  ,2008               ,36           ,NA             ,NA                   ,"305,965 sqft"      ,NA        ,14
+8510577 ,MARINA VIEW TOWERS B            ,2009               ,14           ,NA             ,NA                   ,"170,941 sqft"      ,NA        ,11
+8515155 ,MARINA STAR                     ,2023               ,25           ,NA             ,NA                   ,"376,005 sqft"      ,NA        ,NA
+8486968 ,K G TOWER                       ,2008               ,19           ,NA             ,NA                   ,"168,414 sqft"      ,NA        ,3
+8476194 ,Sparkle Tower 2                 ,2019               ,14           ,2              ,126                  ,"107,473 sqft"      ,3         ,NA
+8476402 ,Beauport X1                     ,2009               ,25           ,NA             ,985                  ,"138,520 sqft"      ,3         ,NA
+8478210 ,MARINA VIEW                     ,2007               ,9            ,NA             ,NA                   ,"154,935 sqft"      ,NA        ,NA
+8468181 ,23 MARINA                       ,2012               ,62           ,NA             ,NA                   ,"886,537 sqft"      ,NA        ,NA
+8438424 ,MARINA TERRACE                  ,2008               ,36           ,NA             ,NA                   ,"305,965 sqft"      ,NA        ,14
+8485110 ,MAG218                          ,2010               ,57           ,NA             ,NA                   ,"689,176 sqft"      ,NA        ,7
+8497018 ,THE WAVES A                     ,2008               ,22           ,NA             ,NA                   ,"216,005 sqft"      ,NA        ,NA
+8479295 ,MAG218                          ,2010               ,57           ,NA             ,NA                   ,"689,176 sqft"      ,NA        ,7
+8435482 ,DM MESK                         ,2008               ,38           ,NA             ,NA                   ,"498,918 sqft"      ,NA        ,4
+8435965 ,Cavalli Casa Tower              ,NA                 ,72           ,1              ,640                  ,"1,908,955 sqft"    ,19        ,3
+8438891 ,MARINA STAR                     ,2023               ,25           ,NA             ,NA                   ,"376,005 sqft"      ,NA        ,NA
+8376651 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+8389119 ,MARINA STAR                     ,2023               ,25           ,NA             ,NA                   ,"376,005 sqft"      ,NA        ,NA
+8452521 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+8463671 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+8385504 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+8312431 ,TIME PLACE TOWER                ,2009               ,36           ,NA             ,NA                   ,"321,210 sqft"      ,NA        ,4
+8312671 ,MARINA DIAMOND-3                ,2008               ,16           ,NA             ,NA                   ,"138,330 sqft"      ,NA        ,5
+8406611 ,Torch Tower                     ,2011               ,76           ,NA             ,NA                   ,"852,218 sqft"      ,NA        ,6
+8497336 ,Sky View Tower                  ,2011               ,27           ,NA             ,NA                   ,"231,557 sqft"      ,NA        ,6
+8469398 ,OCEAN HEIGHTS                   ,2010               ,75           ,NA             ,NA                   ,"810,161 sqft"      ,NA        ,1
+8375177 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+8310749 ,Ciel                            ,NA                 ,1            ,1              ,326                  ,"1,363,152 sqft"    ,19        ,8
+8386040 ,Marina Pinnacle                 ,2011               ,66           ,NA             ,NA                   ,"849,284 sqft"      ,NA        ,7
+8401137 ,MARINA CROWN TOWER              ,2007               ,55           ,1              ,451                  ,"983,257 sqft"      ,7         ,3
+8324173 ,Ciel                            ,NA                 ,1            ,1              ,326                  ,"1,363,152 sqft"    ,19        ,8
+8431695 ,OCEAN HEIGHTS                   ,2010               ,75           ,NA             ,NA                   ,"810,161 sqft"      ,NA        ,1
+8286052 ,THE RESIDENCE AT MARINA GATE 2  ,2019               ,61           ,1              ,770                  ,"703,394 sqft"      ,11        ,15
+8307986 ,Ciel                            ,NA                 ,1            ,1              ,326                  ,"1,363,152 sqft"    ,19        ,8
+8337168 ,THE RESIDENCE AT MARINA GATE 2  ,2019               ,61           ,1              ,770                  ,"703,394 sqft"      ,11        ,15
+8300272 ,Sulafa Tower                    ,2010               ,67           ,NA             ,NA                   ,"846,914 sqft"      ,NA        ,1
+8374578 ,MARINA STAR                     ,2023               ,25           ,NA             ,NA                   ,"376,005 sqft"      ,NA        ,NA
+8316400 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+8215081 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+8246194 ,ZUMURUD                         ,2010               ,30           ,NA             ,NA                   ,"279,413 sqft"      ,NA        ,3
+8215079 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+8215085 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+8374579 ,MARINA STAR                     ,2023               ,25           ,NA             ,NA                   ,"376,005 sqft"      ,NA        ,NA
+8201711 ,MARINA SHORES                   ,NA                 ,11           ,1              ,551                  ,"1,133,555 sqft"    ,12        ,7
+8223120 ,Ciel                            ,NA                 ,1            ,1              ,326                  ,"1,363,152 sqft"    ,19        ,8
+8193134 ,MANCHESTER TOWER                ,2008               ,33           ,NA             ,NA                   ,"257,766 sqft"      ,NA        ,3
+8387712 ,AL Murjan                       ,2008               ,38           ,NA             ,NA                   ,"920,347 sqft"      ,NA        ,4
+8144907 ,ORRA HARBOUR TOWER 2            ,2017               ,1            ,1              ,165                  ,"129,369 sqft"      ,5         ,NA
+8173306 ,Cavalli Casa Tower              ,NA                 ,72           ,1              ,640                  ,"1,908,955 sqft"    ,19        ,3
+8121595 ,Sulafa Tower                    ,2010               ,67           ,NA             ,NA                   ,"846,914 sqft"      ,NA        ,1
+8166565 ,Cavalli Casa Tower              ,NA                 ,72           ,1              ,640                  ,"1,908,955 sqft"    ,19        ,3
+8232433 ,Horizon Tower                   ,2008               ,42           ,NA             ,NA                   ,"411,917 sqft"      ,NA        ,1
+7890660 ,LIV RESIDENCE                   ,2020               ,28           ,1              ,205                  ,"427,447 sqft"      ,4         ,8
+8467197 ,MARINA STAR                     ,2023               ,25           ,NA             ,NA                   ,"376,005 sqft"      ,NA        ,NA
+8025952 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+7883841 ,Cavalli Casa Tower              ,NA                 ,72           ,1              ,640                  ,"1,908,955 sqft"    ,19        ,3
+7877197 ,Cavalli Casa Tower              ,NA                 ,72           ,1              ,640                  ,"1,908,955 sqft"    ,19        ,3
+7682012 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+7681891 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+7681741 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+7682010 ,NA                              ,NA                 ,NA           ,NA             ,NA                   ,NA                  ,NA        ,NA
+7673283 ,Cavalli Casa Tower              ,NA                 ,72           ,1              ,640                  ,"1,908,955 sqft"    ,19        ,3
+8373108 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+7640069 ,Cavalli Casa Tower              ,NA                 ,72           ,1              ,640                  ,"1,908,955 sqft"    ,19        ,3
+8215084 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+7813188 ,THE WAVES B                     ,2008               ,12           ,NA             ,NA                   ,"159,627 sqft"      ,NA        ,10
+8398081 ,Sulafa Tower                    ,2010               ,67           ,NA             ,NA                   ,"846,914 sqft"      ,NA        ,1
+8277192 ,52|42 Tower 2                   ,2020               ,38           ,NA             ,245                  ,"1,465,941 sqft"    ,5         ,NA
+8321466 ,ELITE RESIDENCE                 ,2012               ,75           ,NA             ,NA                   ,"925,527 sqft"      ,NA        ,3
+6814106 ,IRIS BLUE                       ,2011               ,29           ,NA             ,NA                   ,"211,465 sqft"      ,NA        ,6
+6660102 ,VIDA Residences Dubai Marina    ,2022               ,60           ,1              ,562                  ,"1,403,598 sqft"    ,17        ,NA
+6544192 ,DREAM TOWER                     ,2010               ,30           ,NA             ,NA                   ,"500,579 sqft"      ,NA        ,8
+6637312 ,MARINA SHORES                   ,NA                 ,11           ,1              ,551                  ,"1,133,555 sqft"    ,12        ,7
+7501162 ,Sulafa Tower                    ,2010               ,67           ,NA             ,NA                   ,"846,914 sqft"      ,NA        ,1
+6065288 ,MARINA ARCADE                   ,2017               ,49           ,1              ,367                  ,"858,187 sqft"      ,8         ,1
+5983681 ,DM MESK                         ,2008               ,38           ,NA             ,NA                   ,"498,918 sqft"      ,NA        ,4
+7867907 ,PRINCESS TOWER                  ,2012               ,89           ,NA             ,NA                   ,"1,097,409 sqft"    ,NA        ,8
+2347336 ,Avant                           ,2011               ,28           ,2              ,522                  ,"358,606 sqft"      ,3         ,NA

@@ -33,13 +33,13 @@ page_numbers = [
     'page-24/'
 ]
 
-csv_file_path = 'apartment_data.csv'
+csv_file_path = 'source_file_data.csv'
 
 with open(csv_file_path, 'w', newline='', encoding='utf-8') as csv_file:
     csv_writer = csv.writer(csv_file)
 
-    csv_writer.writerow(['Price', 'Reference Number', 'Permit Number', 'Title', 'Rooms', 'Baths',
-                         'Area', 'Phone_number_list', 'Contact Name', 'Latitude', 'Longitude', 'Furnishing Status'])
+    csv_writer.writerow(['Id','Price', 'Reference Number', 'Permit Number', 'Title', 'Rooms', 'Baths',
+                         'Area', 'Mobile','Phone','Whatsapp','Proxy_mobile','Phone_number','Mobile_number', 'Contact Name', 'Latitude', 'Longitude', 'Furnishing Status'])
 
     for page_number in page_numbers:
         current_url = f'{url}{page_number}'
@@ -56,7 +56,8 @@ with open(csv_file_path, 'w', newline='', encoding='utf-8') as csv_file:
             if len(script_tags) >= 4:
                 fourth_last_script = script_tags[-4]
                 fourth_last_script_content = fourth_last_script.get_text(strip=True)
-
+                first_script = script_tags[0]
+                first_script_content = first_script.get_text(strip=True)
                 json_match = re.search(r'({.*})', fourth_last_script_content)
 
                 if json_match:
@@ -64,7 +65,8 @@ with open(csv_file_path, 'w', newline='', encoding='utf-8') as csv_file:
 
                     try:
                         data_dict = json.loads(json_content)
-
+                        listing_ids = re.findall(r'"listing_id":\s*\[([^\]]+)]', first_script_content)
+                        ids = [id for ids_string in listing_ids for id in re.findall(r'\d{7}', ids_string)]
                         prices = re.findall(r'"price":\s*(\d+)', fourth_last_script_content)
                         reference_numbers = re.findall(r'"referenceNumber":\s*"([^"]+)"', fourth_last_script_content)
                         permit_numbers = re.findall(r'"permitNumber":\s*"([^"]+)"', fourth_last_script_content)
@@ -78,18 +80,17 @@ with open(csv_file_path, 'w', newline='', encoding='utf-8') as csv_file:
                         proxyMobiles = re.findall(r'"proxyMobile":\s*"([^"]+)"', fourth_last_script_content)
                         phone_numbers = re.findall(r'"phoneNumbers":\s*\["(\+\d+)"\]', fourth_last_script_content)
                         mobile_numbers = re.findall(r'"mobileNumbers":\s*\["(\+\d+)"\]', fourth_last_script_content)
-                        phone_number_list = re.findall(r'"phoneNumber":\s*\{"mobile":\s*"([^"]+)",\s*"phone":\s*"([^"]+)",\s*"whatsapp":\s*"([^"]+)",\s*"proxyMobile":\s*"([^"]+)"', fourth_last_script_content)
+                        # phone_number_list = re.findall(r'"phoneNumber":\s*\{"mobile":\s*"([^"]+)",\s*"phone":\s*"([^"]+)",\s*"whatsapp":\s*"([^"]+)",\s*"proxyMobile":\s*"([^"]+)"', fourth_last_script_content)
                         contactNames = re.findall(r'"contactName":\s*"([^"]+)"', fourth_last_script_content)
                         latitudes = re.findall(r'"state":\s*[^,]+,\s*"geography":\s*{\s*"lat":\s*([\d.]+)', fourth_last_script_content)
                         longitudes = re.findall(r'"state":\s*[^,]+,\s*"geography":\s*{\s*"lat":\s*[^,]+,\s*"lng":\s*([\d.]+)', fourth_last_script_content)
                         furnishingStatus = re.findall(r'"furnishingStatus":\s*"([^"]+)"', fourth_last_script_content)
-                        print(phone_number_list)
-                        # Write directly to CSV file for each apartment
                         for i in range(max(len(prices), len(reference_numbers), len(permit_numbers), len(titles), len(rooms),
                                         len(baths), len(areas), len(mobiles), len(phones), len(whatsapps), len(proxyMobiles),
                                         len(phone_numbers), len(mobile_numbers), len(contactNames), len(latitudes), len(longitudes),
                                         len(furnishingStatus))):
                             csv_writer.writerow([
+                                ids[i] if i < len(ids) else '',
                                 prices[i] if i < len(prices) else '',
                                 reference_numbers[i] if i < len(reference_numbers) else '',
                                 permit_numbers[i] if i < len(permit_numbers) else '',
@@ -121,6 +122,3 @@ with open(csv_file_path, 'w', newline='', encoding='utf-8') as csv_file:
             print(f"Failed to fetch the page. Status code: {response.status_code}")
 
 print(f"Data saved to {csv_file_path}")
-
-
-
