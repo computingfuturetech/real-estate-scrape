@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import CSVDataView
+from .views import ValidatedInformationView
 
 urlpatterns = [
-    path('csvdata/', CSVDataView.as_view(), name='csvdata'),
+    path('csvdata/', ValidatedInformationView.as_view(), name='csvdata'),
 ]

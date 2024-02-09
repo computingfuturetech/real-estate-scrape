@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'djoser',
     'user',
     'corsheaders',
+    'django_crontab',
 ]
 
 APP_DIRS = True
@@ -63,6 +64,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
+
+CRONJOBS = [
+    ('*/1 * * * *', 'user.cron.my_scheduled_job'),
+]
+
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
