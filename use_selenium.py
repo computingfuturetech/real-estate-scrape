@@ -12,7 +12,7 @@ def scrape_and_write_data(url, headers, csv_file_path):
     driver = webdriver.Chrome()
     try:
         driver.get(url)
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(driver, 5)
         target_element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, '_208d68ae')))
         if target_element:
             target_element.click()
@@ -66,32 +66,7 @@ def scrape_and_write_data(url, headers, csv_file_path):
 
 
 new_url = 'https://www.bayut.com/for-sale/apartments/dubai/dubai-marina/'
-page_numbers = [
-    '',
-    'page-2/',
-    'page-3/',
-    'page-4/',
-    'page-5/',
-    'page-6/',
-    'page-7/',
-    'page-8/',
-    'page-9/',
-    'page-10/',
-    'page-11/',
-    'page-12/',
-    'page-13/',
-    'page-14/',
-    'page-15/',
-    'page-16/',
-    'page-17/',
-    'page-18/',
-    'page-19/',
-    'page-20/',
-    'page-21/',
-    'page-22/',
-    'page-23/',
-    'page-24/'
-]
+page_numbers = [''] + [f'page-{i}/' for i in range(2, 25)]
 
 for page_number in page_numbers:
         current_url = f'{new_url}{page_number}'
@@ -107,9 +82,9 @@ for page_number in page_numbers:
                     listing_ids = re.findall(r'"listing_id":\s*\[([^\]]+)]', first_script_content)
                     if listing_ids:
                         listing_ids = [int(id.strip()) for id in listing_ids[0].split(',')]
-                        csv_file_path1 = 'building_information1.csv'
-                        csv_file_path2 = 'validated_information.csv'
-                        csv_file_path3 = 'project_information.csv'
+                        csv_file_path1 = 'building_information2.csv'
+                        csv_file_path2 = 'validated_information2.csv'
+                        csv_file_path3 = 'project_information2.csv'
                         
 
                         building_info_headers = ['id', 'Building Name', 'Year of Completion', 'Total Floors', 'Swimming Pools',
