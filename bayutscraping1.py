@@ -6,39 +6,14 @@ import csv
 import time
 
 url = 'https://www.bayut.com/for-sale/apartments/dubai/dubai-marina/'
-page_numbers = [
-    '',
-    'page-2/',
-    'page-3/',
-    'page-4/',
-    'page-5/',
-    'page-6/',
-    'page-7/',
-    'page-8/',
-    'page-9/',
-    'page-10/',
-    'page-11/',
-    'page-12/',
-    'page-13/',
-    'page-14/',
-    'page-15/',
-    'page-16/',
-    'page-17/',
-    'page-18/',
-    'page-19/',
-    'page-20/',
-    'page-21/',
-    'page-22/',
-    'page-23/',
-    'page-24/'
-]
+page_numbers = [''] + [f'page-{i}/' for i in range(2, 25)]
 
-csv_file_path = 'source_file_data.csv'
+csv_file_path = 'source_file_data1.csv'
 
 with open(csv_file_path, 'w', newline='', encoding='utf-8') as csv_file:
     csv_writer = csv.writer(csv_file)
 
-    csv_writer.writerow(['Id','Price', 'Reference Number', 'Permit Number', 'Title', 'Rooms', 'Baths',
+    csv_writer.writerow(['id','Price', 'Reference Number', 'Permit Number', 'Title', 'Rooms', 'Baths',
                          'Area', 'Mobile','Phone','Whatsapp','Proxy_mobile','Phone_number','Mobile_number', 'Contact Name', 'Latitude', 'Longitude', 'Furnishing Status'])
 
     for page_number in page_numbers:
@@ -80,7 +55,6 @@ with open(csv_file_path, 'w', newline='', encoding='utf-8') as csv_file:
                         proxyMobiles = re.findall(r'"proxyMobile":\s*"([^"]+)"', fourth_last_script_content)
                         phone_numbers = re.findall(r'"phoneNumbers":\s*\["(\+\d+)"\]', fourth_last_script_content)
                         mobile_numbers = re.findall(r'"mobileNumbers":\s*\["(\+\d+)"\]', fourth_last_script_content)
-                        # phone_number_list = re.findall(r'"phoneNumber":\s*\{"mobile":\s*"([^"]+)",\s*"phone":\s*"([^"]+)",\s*"whatsapp":\s*"([^"]+)",\s*"proxyMobile":\s*"([^"]+)"', fourth_last_script_content)
                         contactNames = re.findall(r'"contactName":\s*"([^"]+)"', fourth_last_script_content)
                         latitudes = re.findall(r'"state":\s*[^,]+,\s*"geography":\s*{\s*"lat":\s*([\d.]+)', fourth_last_script_content)
                         longitudes = re.findall(r'"state":\s*[^,]+,\s*"geography":\s*{\s*"lat":\s*[^,]+,\s*"lng":\s*([\d.]+)', fourth_last_script_content)
