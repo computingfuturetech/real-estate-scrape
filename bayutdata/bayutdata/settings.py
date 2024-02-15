@@ -67,7 +67,7 @@ MIDDLEWARE = [
 ]
 
 CRONJOBS = [
-    ('*/1 * * * *', 'user.cron.my_scheduled_job'),
+    ('*/1 * * * *', 'user.cron.delete_otp'),
 ]
 
 
