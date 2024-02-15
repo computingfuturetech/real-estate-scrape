@@ -1,6 +1,6 @@
 import pandas as pd
 
-csv_files = ['validated_information2.csv', 'building-information2.csv','project_information2.csv']
+csv_files = ['validated_information2.csv', 'building_information2.csv']
 
 if csv_files:
     print("Found")
@@ -16,7 +16,3 @@ merged_df.to_csv('merged_selenium_data.csv', index=False)
 
 
 
-
-
-
-# csv_files = ['project_information.csv', 'property_information.csv', 'source_file_data.csv', 'validated_information.csv', 'building_information1.csv']
