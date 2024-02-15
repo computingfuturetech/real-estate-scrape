@@ -13,6 +13,8 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
 from rest_framework.views import APIView
+from datetime import datetime, timedelta
+from django.utils import timezone
 
 
 class UserCreateViewSet(generics.CreateAPIView):
@@ -101,7 +103,6 @@ class SendOtpToUser(generics.CreateAPIView):
             if exist_email:
                 emaill = User.objects.get(email=email)
                 otp = str(random.randint(100000, 999999))
-                
                 EmailOtp.objects.filter(email=emaill.id).delete()
                  
                 write=EmailOtp.objects.create(email=emaill,otp=otp)
@@ -113,7 +114,7 @@ class SendOtpToUser(generics.CreateAPIView):
                     [email],  
                     fail_silently=False,
                     )
-                    return Response({'status': 'OTP send successfully'}, status=status.HTTP_201_CREATED)
+                return Response({'status': 'OTP send successfully'}, status=status.HTTP_201_CREATED)
             else:
                 return Response({'error': 'Invalid Email'}, status=status.HTTP_401_UNAUTHORIZED)
         
@@ -154,3 +155,9 @@ class VerifyOTP(APIView):
             return Response({'message': 'OTP verified successfully.'}, status=status.HTTP_200_OK)
         else:
             return Response({'error': 'Invalid OTP.'}, status=status.HTTP_400_BAD_REQUEST)
+
+# def abc():
+#     expiration_time = datetime.now()
+#     print(expiration_time)
+
+# abc()
