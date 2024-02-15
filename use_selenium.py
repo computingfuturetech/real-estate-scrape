@@ -64,12 +64,26 @@ def scrape_and_write_data(url, headers, csv_file_path):
 
 
 
+def read_existing_ids(csv_file_path):
+    existing_ids = set()
+    with open(csv_file_path, 'r', newline='', encoding='utf-8') as csvfile:
+        reader = csv.reader(csvfile)
+        next(reader) 
+        for row in reader:
+            existing_ids.add(int(row[0]))  
+    return existing_ids
 
-new_url = 'https://www.bayut.com/for-sale/apartments/dubai/dubai-marina/'
-page_numbers = [''] + [f'page-{i}/' for i in range(2, 25)]
+existing_building_ids = read_existing_ids('building_information2.csv')
+existing_validated_ids = read_existing_ids('validated_information2.csv')
+existing_project_ids = read_existing_ids('project_information2.csv')
+
+
+new_url = 'https://www.bayut.com/for-sale/apartments/dubai/dubai-marina/?rent_frequency=monthly'
+page_numbers = [''] + [f'page-{i}/' for i in range(2, 10)]
 
 for page_number in page_numbers:
-        current_url = f'{new_url}{page_number}'
+        current_url = f'https://www.bayut.com/for-sale/apartments/dubai/dubai-marina/{page_number}?rent_frequency=any'
+        # current_url = f'{new_url}{page_number}'
         response = requests.get(current_url)
         if response.status_code == 200:
             soup = BeautifulSoup(response.content, 'html.parser')
@@ -98,6 +112,8 @@ for page_number in page_numbers:
 
                         
                         for i in range(len(listing_ids)):
+                            if listing_ids[i] in existing_building_ids or listing_ids[i] in existing_validated_ids or listing_ids[i] in existing_project_ids:
+                                continue
                             url = f'https://www.bayut.com/property/details-{listing_ids[i]}.html'
                             scrape_and_write_data(url, building_info_headers, csv_file_path1)
                             scrape_and_write_data(url, validated_info_headers, csv_file_path2)
