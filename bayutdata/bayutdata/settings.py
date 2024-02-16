@@ -68,6 +68,8 @@ MIDDLEWARE = [
 
 CRONJOBS = [
     ('*/1 * * * *', 'user.cron.delete_otp'),
+    ('*/1 * * * *', 'dashboard.cron.insert_data_from_csv'),
+    ('*/1 * * * *', 'dashboard.cron.insert_building_data_from_csv')
 ]
 
 
