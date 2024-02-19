@@ -8,7 +8,7 @@ import json
 import csv
 import time
 import os
-from .models import ApartmentDetail,BuildingInformation
+from .models import ApartmentDetail,BuildingInformation,ProjectInformation,ValidatedInformation
 import pandas as pd
 
 
@@ -174,8 +174,61 @@ def update_source_file_data():
     print(f"Data saved to {csv_file_path}")
 
 
-# update_source_file_data()
+def insert_project_data_from_csv():
+    try:
+        csv_file_path = os.path.join(settings.MEDIA_ROOT, 'csvfiles/project_information2.csv')
+        df = pd.read_csv(csv_file_path, header=0)
+        new_df = df.dropna()
+        for index, row in new_df.iterrows():
+            project_id = str(row['id']).strip()
+            if not ProjectInformation.objects.filter(project_id=project_id).exists():
+                data = {
+                    'project_id': project_id,
+                    'project_name': row['Project Name'],
+                    'last_inspected': row['Last Inspected'],
+                    'completion': row['Completion'],
+                    'handover': row['Handover'],
+                }
+                project_information = ProjectInformation(**data)
+                project_information.save()
+            if pd.isnull(project_id):
+                print(f"Skipping row {index} due to missing id value.")
+                continue
+            try:
+                project_id = int(project_id)
+            except ValueError:
+                print(f"Skipping row {index} due to non-integer id value: {project_id}")
+                continue
+    except FileNotFoundError:
+        print(f"File {csv_file_path} not found.")
 
 
-
-
+def insert_validated_data_from_csv():
+    try:
+        csv_file_path = os.path.join(settings.MEDIA_ROOT, 'csvfiles/validated_information2.csv')
+        df = pd.read_csv(csv_file_path, header=0)
+        for index, row in df.iterrows():
+            validated_id = str(row['id']).strip()
+            if not ValidatedInformation.objects.filter(validated_id=validated_id).exists():
+                data = {
+                    'validated_id': validated_id,
+                    'developer': row['Developer'],
+                    'ownership': row['Ownership'],
+                    'built_up_area': row['Built-up Area'],
+                    'usage': row['Usage'],
+                    'balcony_size': row['Balcony Size'],
+                    'total_building_area': row['Total Building Area'],
+                    'parking_availability': row['Parking Availability']
+                }
+                validated_information = ValidatedInformation(**data)
+                validated_information.save()
+            if pd.isnull(validated_id):
+                print(f"Skipping row {index} due to missing id value.")
+                continue
+            try:
+                validated_id = int(validated_id)
+            except ValueError:
+                print(f"Skipping row {index} due to non-integer id value: {validated_id}")
+                continue
+    except FileNotFoundError:
+        print(f"File {csv_file_path} not found.")

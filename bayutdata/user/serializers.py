@@ -1,10 +1,11 @@
 from rest_framework import serializers
 from djoser.serializers import UserSerializer as BaseUserSerializer,UserCreateSerializer as BaseUserCreateSerializer
 from django.contrib.auth.password_validation import validate_password
+from .models import User
 
 class UserCreateSerializer(BaseUserCreateSerializer):
     class Meta(BaseUserCreateSerializer.Meta):
-        fields=['username','password','email','first_name','last_name','phone','date_of_birth']
+        fields=['username','password','email','first_name','last_name','phone','bio']
 
 class ChangePasswordserializer(serializers.Serializer):
     old_password = serializers.CharField(write_only=True, required=True)
@@ -34,3 +35,18 @@ class ForgetPasswordSerializer(serializers.Serializer):
         user.set_password(self.validated_data['new_password'])
         user.save()
 
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=User
+        fields=['image']
+
+class UserUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=User
+        fields=['first_name','last_name','phone','bio']
+
+
+class UserTwoFactorAuthenticationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=User
+        fields=['twofa']      
