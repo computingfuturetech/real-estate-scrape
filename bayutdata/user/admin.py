@@ -10,6 +10,6 @@ class UserAdmin(BaseUserAdmin):
             'fields': ('username', 'password1', 'password2', 'email', 'first_name', 'last_name','phone','bio','image'),
         }),
     )
-    list_display=['username','email','image','twofa']
-    list_editable = ['image','twofa']
+    list_display=['username','email','image','twofa','bio']
+    list_editable = ['image','twofa','bio']
     
