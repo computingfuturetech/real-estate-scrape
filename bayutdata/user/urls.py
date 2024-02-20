@@ -8,8 +8,7 @@ urlpatterns=[
     path('send-otp/', views.SendOtpToUser.as_view(), name='send_otp'),
     path('forget-password/', views.ForgetPassword.as_view(), name='forget-password'),
     path('verify-otp/', views.VerifyOTP.as_view(), name='verify-otp'),
-    path('updateup/', views.UpdateUserProfileViewSet.as_view(), name='update_profile'),
-    path('update/', views.UpdateUserViewSet.as_view(), name='update_user'),
+    path('update/', views.update_user, name='update_user'),
     path('twofa/', views.TwoFactorAuthenticationViewSet.as_view(), name='twofa'),
     path('verify-otp-twofa/', views.VerifyOTPForTwoFactorauthentication.as_view(), name='verify-otp-twofa'),
 ]

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import User,EmailOtp
 from rest_framework import generics,status
-from .serializers import UserCreateSerializer,ChangePasswordserializer,UserProfileSerializer,UserUpdateSerializer,UserTwoFactorAuthenticationSerializer
+from .serializers import UserCreateSerializer,ChangePasswordserializer,UserUpdateSerializer,UserTwoFactorAuthenticationSerializer
 from .permissions import IsOwnerOrAdmin
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
@@ -14,6 +14,9 @@ from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
 from rest_framework.views import APIView
 from django.core.exceptions import PermissionDenied
+from rest_framework.decorators import action
+import os
+
 
 
 class UserCreateViewSet(generics.CreateAPIView):
@@ -39,57 +42,6 @@ class UserCreateViewSet(generics.CreateAPIView):
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
-
-# @api_view(['POST'])
-# @permission_classes([])
-# def login_view(request):
-#     if request.method == 'POST':
-#         email_or_username = request.data.get('email')
-#         password = request.data.get('password')
-
-#         if not email_or_username or not password:
-#             return Response({'error':('Please provide both email or username and password.')}, status=status.HTTP_400_BAD_REQUEST)
-        
-#         if '@' in email_or_username:
-#             user = authenticate(request, email=email_or_username , password=password)
-#         else:
-#             user = authenticate(request, username=email_or_username , password=password)
-
-#         if user is not None:
-#             check_two_factor_authentication=User.objects.get(email_or_username=email_or_username)
-#             if check_two_factor_authentication.twofa == True:
-#                 exist_email = User.objects.filter(email_or_username=email_or_username)                           
-#                 if exist_email:
-#                     emaill = User.objects.get(email=email_or_username)
-#                     otp = str(random.randint(100000, 999999))
-#                     EmailOtp.objects.filter(email=emaill.id).delete()
-#                     write=EmailOtp.objects.create(email=emaill,otp=otp)
-#                     if write:
-#                         send_mail(
-#                         'Your OTP',
-#                         f'Your OTP is: {otp}',
-#                         settings.EMAIL_HOST_USER, 
-#                         [emaill.email],  
-#                         fail_silently=False,
-#                         )
-#                     return Response({'status': 'OTP send successfully'}, status=status.HTTP_201_CREATED)
-#                 else:
-#                     return Response({'error': 'Invalid Email'}, status=status.HTTP_401_UNAUTHORIZED)
-
-#             # login(request, user)
-
-#             # refresh = RefreshToken.for_user(user)
-#             # access_token = str(refresh.access_token)
-#             # response_data = {
-#             #     'token': access_token,
-#             #     'user_id': user.id,
-#             #     'status':'Successfully login',
-#             # }
-#             # return Response(response_data, status=status.HTTP_200_OK)
-#         # else:
-#         #     return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
-#     else:
-#         return Response({'error': 'Method not allowed'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 @api_view(['POST'])
 @permission_classes([])
@@ -220,72 +172,41 @@ class VerifyOTP(APIView):
         else:
             return Response({'error': 'Invalid OTP.'}, status=status.HTTP_400_BAD_REQUEST)
 
+def delete_user_image(instance):
+    if instance.image:
 
-class UpdateUserProfileViewSet(generics.RetrieveUpdateAPIView):
-    queryset=User.objects.all()
-    serializer_class=UserProfileSerializer
-    permission_classes=[IsOwnerOrAdmin]
+        image_path = instance.image.path
+        instance.image.delete()
+        if os.path.isfile(image_path):
+            os.remove(image_path)
 
-    def get(self, request, *args, **kwargs):
-        user=self.request.user
+@api_view(['POST'])
+def update_user(request):
+    if request.method == 'POST':
         try:
+            user = request.user
             instance = User.objects.get(pk=user.id)
-            serializer = self.get_serializer(instance)
-            return Response(serializer.data)
-        except User.DoesNotExist:
-            return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
-    
-    def put(self, request, *args, **kwargs):
-        user = self.request.user
-        try:
-            instance = User.objects.get(pk=user.id)
-            if instance.image:
-                instance.image.delete()
-            serializer = self.get_serializer(instance, data=request.data, partial=True)
-            if serializer.is_valid():
-                if serializer.validated_data:
-                    serializer.save()
-                    return Response({'status': 'Profile updated successfully'}, status=status.HTTP_200_OK)
-                else:
-                    return Response({'error': 'No changes detected'}, status=status.HTTP_400_BAD_REQUEST)
-            else:
-                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        except User.DoesNotExist:
-            return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+            if not request.data:
+                serializer = UserUpdateSerializer(instance)
+                return Response(serializer.data)
+            if 'image' in request.data:
+                if instance.image:
+                    instance.image.delete()
+                instance.image = request.data['image']
 
-
-class UpdateUserViewSet(generics.UpdateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserUpdateSerializer
-    permission_classes=[IsOwnerOrAdmin]
-    def get_object(self):
-        user = self.request.user
-        if hasattr(user, 'id'):
-            return user
-        else:
-            raise PermissionDenied('Unauthorized: User not found or authenticated')
-    def patch(self, request, *args, **kwargs):
-        try:
-            user = self.get_object()
-            serializer = self.get_serializer(instance=user, data=request.data, partial=True)
-            provided_fields = set(request.data.keys())
-            serializer_fields = set(serializer.fields.keys())
-            if not provided_fields.issubset(serializer_fields):
-                missing_fields = provided_fields - serializer_fields
-                return Response(
-                    {'error': f'The following fields are not allowed to be updated: {", ".join(missing_fields)}'},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
+            serializer = UserUpdateSerializer(instance, data=request.data, partial=True)
             if serializer.is_valid():
                 serializer.save()
-                response_data = {
-                        'status': 'Successfully Updated'
-                    }
-                return Response(response_data)
+                return Response(serializer.data, status=status.HTTP_200_OK)
             else:
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        except PermissionDenied as e:
-            return Response({'error': str(e)}, status=status.HTTP_403_FORBIDDEN)
+
+        except User.DoesNotExist:
+            return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+    else:
+        return Response({'error': 'Method not allowed'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
 
 class TwoFactorAuthenticationViewSet(generics.UpdateAPIView):
     queryset = User.objects.all()
