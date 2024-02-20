@@ -68,7 +68,7 @@ def login_view(request):
                     'Your OTP',
                     f'Your OTP is: {otp}',
                     settings.EMAIL_HOST_USER, 
-                    [user.email],  
+                    [user.sec_email],  
                     fail_silently=False,
                 )
                 return Response({'status': 'OTP sent successfully'}, status=status.HTTP_201_CREATED)
@@ -206,41 +206,38 @@ def update_user(request):
     else:
         return Response({'error': 'Method not allowed'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
-
-
-class TwoFactorAuthenticationViewSet(generics.UpdateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserTwoFactorAuthenticationSerializer
-    permission_classes=[IsOwnerOrAdmin]
-    def get_object(self):
-        user = self.request.user
-        if hasattr(user, 'id'):
-            return user
-        else:
-            raise PermissionDenied('Unauthorized: User not found or authenticated')
-    def patch(self, request, *args, **kwargs):
+@api_view(['POST'])
+def add_twofa(request):
+    if request.method == 'POST':
         try:
-            user = self.get_object()
-            serializer = self.get_serializer(instance=user, data=request.data, partial=True)
-            provided_fields = set(request.data.keys())
-            serializer_fields = set(serializer.fields.keys())
-            if not provided_fields.issubset(serializer_fields):
-                missing_fields = provided_fields - serializer_fields
-                return Response(
-                    {'error': f'The following fields are not allowed to be updated: {", ".join(missing_fields)}'},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
-            if serializer.is_valid():
-                serializer.save()
-                response_data = {
-                        'status': 'Successfully Updated'
-                    }
-                return Response(response_data)
+            user = request.user
+            instance = User.objects.get(pk=user.id)
+            if not request.data:
+                serializer = UserTwoFactorAuthenticationSerializer(instance)
+                return Response(serializer.data)
+            if 'twofa' in request.data:
+                twofa_enabled = request.data.get('twofa')
+                if twofa_enabled=='True':
+                    sec_email = request.data.get('sec_email')
+                    if not sec_email:
+                        return Response({'error': 'Secondary email is required to enable two-factor authentication'}, status=status.HTTP_400_BAD_REQUEST)
+                    instance.sec_email = sec_email
+                    instance.twofa = True
+                    instance.save()
+                    serializer = UserTwoFactorAuthenticationSerializer(instance)
+                    return Response(serializer.data, status=status.HTTP_200_OK)
+                if twofa_enabled == 'False':
+                    instance.sec_email= None
+                    instance.twofa = twofa_enabled
+                    instance.save()
+                    return Response({'message': 'Two-factor authentication disabled successfully'}, status=status.HTTP_200_OK)
             else:
-                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        except PermissionDenied as e:
-            return Response({'error': str(e)}, status=status.HTTP_403_FORBIDDEN)
-        
+                return Response({'error': 'The "twofa" field is required'}, status=status.HTTP_400_BAD_REQUEST)
+        except User.DoesNotExist:
+            return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+    else:
+        return Response({'error': 'Method not allowed'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
 
 class VerifyOTPForTwoFactorauthentication(APIView):
     def post(self, request):
