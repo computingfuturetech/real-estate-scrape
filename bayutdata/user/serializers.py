@@ -55,4 +55,4 @@ class UserUpdateSerializer(serializers.ModelSerializer):
 class UserTwoFactorAuthenticationSerializer(serializers.ModelSerializer):
     class Meta:
         model=User
-        fields=['twofa']      
+        fields=['twofa','sec_email']      
