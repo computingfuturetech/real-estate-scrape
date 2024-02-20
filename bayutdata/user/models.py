@@ -16,9 +16,9 @@ def user_image_path(instance, filename):
 class User(AbstractUser):
     email=models.EmailField(unique=True)
     sec_email=models.EmailField(blank=True, null=True)
-    phone=models.CharField(max_length=11,null=True, blank=True,)
+    phone=models.CharField(max_length=11, default="")
     image = models.ImageField(upload_to=user_image_path, blank=True, null=True)
-    bio=models.CharField(max_length=1000,blank=True, null=True)
+    bio=models.CharField(max_length=1000,blank=True,default="")
     twofa=models.BooleanField(default=False)
     def __str__(self):
         return self.username

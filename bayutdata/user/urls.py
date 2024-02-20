@@ -9,7 +9,6 @@ urlpatterns=[
     path('forget-password/', views.ForgetPassword.as_view(), name='forget-password'),
     path('verify-otp/', views.VerifyOTP.as_view(), name='verify-otp'),
     path('update/', views.update_user, name='update_user'),
-    # path('twofa/', views.TwoFactorAuthenticationViewSet.as_view(), name='twofa'),
     path('twofa/', views.add_twofa, name='twofa'),
     path('verify-otp-twofa/', views.VerifyOTPForTwoFactorauthentication.as_view(), name='verify-otp-twofa'),
 ]

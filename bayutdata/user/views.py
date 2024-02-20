@@ -188,7 +188,9 @@ def update_user(request):
             instance = User.objects.get(pk=user.id)
             if not request.data:
                 serializer = UserUpdateSerializer(instance)
-                return Response(serializer.data)
+                response_data = serializer.data
+                response_data['email'] = instance.email
+                return Response(response_data)
             if 'image' in request.data:
                 if instance.image:
                     instance.image.delete()
@@ -197,7 +199,9 @@ def update_user(request):
             serializer = UserUpdateSerializer(instance, data=request.data, partial=True)
             if serializer.is_valid():
                 serializer.save()
-                return Response(serializer.data, status=status.HTTP_200_OK)
+                response_data = serializer.data
+                response_data['email'] = instance.email
+                return Response(response_data, status=status.HTTP_200_OK)
             else:
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
