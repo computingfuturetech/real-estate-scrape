@@ -41,16 +41,6 @@ class UserUpdateSerializer(serializers.ModelSerializer):
         model=User
         fields=['first_name','last_name','phone','bio','image']
     
-    # def to_representation(self, instance):
-    #     data = super().to_representation(instance)
-    #     # Check if the instance has an image
-    #     if instance.image:
-    #         # Construct the image URL based on the base URL and the image path from the database
-    #         image_url = settings.MEDIA_URL + str(instance.image)
-    #         data['image'] = self.context['request'].build_absolute_uri(image_url)
-    #     else:
-    #         data['image'] = None
-    #     return data
 
 class UserTwoFactorAuthenticationSerializer(serializers.ModelSerializer):
     class Meta:

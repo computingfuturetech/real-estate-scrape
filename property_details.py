@@ -3,8 +3,9 @@ import re
 import requests
 from bs4 import BeautifulSoup
 
-new_url = 'https://www.bayut.com/for-sale/apartments/dubai/dubai-marina/'
-page_numbers = [''] + [f'page-{i}/' for i in range(2, 25)]
+new_url = 'https://www.bayut.com/to-rent/apartments/dubai/dubai-marina/'
+page_numbers = [''] + [f'page-{i}/' for i in range(2, 24)]
+
 
 def extract_property_information(url):
     response = requests.get(url)
@@ -19,20 +20,20 @@ def extract_property_information(url):
             property_info_lines = property_info_text.split('\n')
             property_info_lines = [line.strip() for line in property_info_lines if line.strip()]
             property_info_text = ' • '.join(property_info_lines)
-            return property_info_text
+        return property_info_text
     else:
         print(f"Failed to retrieve data from {url}. Status code: {response.status_code}")
         return None
 
 csv_file_path1 = 'property_details.csv'
-project_info_headers = ['id', 'property_detail']
+project_info_headers = ['id', 'rent_frequency', 'property_detail']
 
-with open(csv_file_path1, 'w', newline='', encoding='utf-8') as csv_file:
+with open(csv_file_path1, 'a', newline='', encoding='utf-8') as csv_file:
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(project_info_headers)
 
     for page_number in page_numbers:
-        current_url = f'{new_url}{page_number}'
+        current_url = f'{new_url}{page_number}?rent_frequency=monthly'
         response = requests.get(current_url)
         if response.status_code == 200:
             soup = BeautifulSoup(response.content, 'html.parser')
@@ -43,13 +44,19 @@ with open(csv_file_path1, 'w', newline='', encoding='utf-8') as csv_file:
                 json_match = re.search(r'({.*})', first_script_content)
                 if json_match:
                     listing_ids = re.findall(r'"listing_id":\s*\[([^\]]+)]', first_script_content)
+                    # rent_frequency = re.findall(r'"rent_frequency":\s*"([^"]+)"', first_script_content)
+                    rent_frequency = re.findall(r'"price_max":\s*[^,]+,\s*"rent_frequency":\s*"([^"]+)"', first_script_content)
                     if listing_ids:
                         listing_ids = [int(id.strip()) for id in listing_ids[0].split(',')]
-                        for i in range(len(listing_ids)):
-                            url = f'https://www.bayut.com/property/details-{listing_ids[i]}.html'
-                            property_info = extract_property_information(url)
-                            if property_info:
-                                csv_writer.writerow([listing_ids[i], property_info])
+                        if rent_frequency and len(rent_frequency) == 1:
+                            rent_frequency = rent_frequency[0]
+                    # print(rent_frequency)
+                            for i in range(len(listing_ids)):
+                                url = f'https://www.bayut.com/property/details-{listing_ids[i]}.html'
+                                property_info = extract_property_information(url)
+                                if property_info:
+                                    csv_writer.writerow([listing_ids[i], rent_frequency, property_info])
+
 
 
 
