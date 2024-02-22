@@ -1,15 +1,10 @@
 import os
-import json
 from django.http import JsonResponse
-from django.http import HttpResponse
 from django.views import View
 from django.shortcuts import render
 from django.conf import settings
 import csv
-from .models import ValidatedInformation,ProjectInformation,BuildingInformation
-import pandas as pd
-from datetime import datetime
-from dateutil import parser
+
 
 
 class ValidatedInformationView(View):
@@ -24,5 +19,5 @@ class ValidatedInformationView(View):
             return JsonResponse({"error": "File  anot found."}, status=404)
 
 
-        
-        
+
+

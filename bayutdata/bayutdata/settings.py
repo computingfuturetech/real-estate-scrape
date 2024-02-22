@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-4gz%3zj-%sm$gi*qhcmm#%z9ezhntwoz&8*rncfqn43$e-uvab
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','10.0.2.2']
+ALLOWED_HOSTS = ['127.0.0.1','10.0.2.2','192.168.0.189','192.168.0.110']
 
 
 # Application definition
@@ -69,7 +69,9 @@ MIDDLEWARE = [
 CRONJOBS = [
     ('*/1 * * * *', 'user.cron.delete_otp'),
     ('*/1 * * * *', 'dashboard.cron.insert_data_from_csv'),
-    ('*/1 * * * *', 'dashboard.cron.insert_building_data_from_csv')
+    ('*/1 * * * *', 'dashboard.cron.insert_building_data_from_csv'),
+    ('*/1 * * * *', 'dashboard.cron.insert_project_data_from_csv'),
+    ('*/1 * * * *', 'dashboard.cron.insert_validated_data_from_csv')
 ]
 
 

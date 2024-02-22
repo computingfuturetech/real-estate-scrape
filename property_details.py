@@ -31,9 +31,8 @@ project_info_headers = ['id', 'rent_frequency', 'property_detail']
 with open(csv_file_path1, 'a', newline='', encoding='utf-8') as csv_file:
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(project_info_headers)
-
     for page_number in page_numbers:
-        current_url = f'{new_url}{page_number}?rent_frequency=monthly'
+        current_url = f'{new_url}{page_number}?rent_frequency=daily'
         response = requests.get(current_url)
         if response.status_code == 200:
             soup = BeautifulSoup(response.content, 'html.parser')
@@ -44,13 +43,11 @@ with open(csv_file_path1, 'a', newline='', encoding='utf-8') as csv_file:
                 json_match = re.search(r'({.*})', first_script_content)
                 if json_match:
                     listing_ids = re.findall(r'"listing_id":\s*\[([^\]]+)]', first_script_content)
-                    # rent_frequency = re.findall(r'"rent_frequency":\s*"([^"]+)"', first_script_content)
                     rent_frequency = re.findall(r'"price_max":\s*[^,]+,\s*"rent_frequency":\s*"([^"]+)"', first_script_content)
                     if listing_ids:
                         listing_ids = [int(id.strip()) for id in listing_ids[0].split(',')]
                         if rent_frequency and len(rent_frequency) == 1:
                             rent_frequency = rent_frequency[0]
-                    # print(rent_frequency)
                             for i in range(len(listing_ids)):
                                 url = f'https://www.bayut.com/property/details-{listing_ids[i]}.html'
                                 property_info = extract_property_information(url)
