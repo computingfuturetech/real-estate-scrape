@@ -5,8 +5,6 @@ from django.shortcuts import render
 from django.conf import settings
 import csv
 
-
-
 class ValidatedInformationView(View):
     def get(self, request, *args, **kwargs):
         csv_file_path = os.path.join(settings.MEDIA_ROOT, 'csvfiles/source_file_data.csv')
@@ -17,7 +15,4 @@ class ValidatedInformationView(View):
                 return JsonResponse(data, safe=False)
         except FileNotFoundError:
             return JsonResponse({"error": "File  anot found."}, status=404)
-
-
-
 

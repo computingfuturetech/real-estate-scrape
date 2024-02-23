@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from .models import User,EmailOtp
 from rest_framework import generics,status
 from .serializers import UserCreateSerializer,ChangePasswordserializer,UserUpdateSerializer,UserTwoFactorAuthenticationSerializer
@@ -13,10 +12,10 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
 from rest_framework.views import APIView
-from django.core.exceptions import PermissionDenied
-from rest_framework.decorators import action
 import os
-import hashlib
+from django.utils import timezone
+from datetime import timedelta
+
 
 
 
@@ -120,8 +119,10 @@ class SendOtpToUser(generics.CreateAPIView):
                 emaill = User.objects.get(email=email)
                 otp = str(random.randint(100000, 999999))
                 EmailOtp.objects.filter(email=emaill.id).delete()
-                 
-                write=EmailOtp.objects.create(email=emaill,otp=otp)
+                current_time = timezone.localtime()
+                new_time = current_time + timedelta(minutes=5)
+                time_string = new_time.strftime('%H:%M:%S')
+                write=EmailOtp.objects.create(email=emaill,otp=otp,expiration_time=time_string)
                 if write:
                     send_mail(
                     'Your OTP',
