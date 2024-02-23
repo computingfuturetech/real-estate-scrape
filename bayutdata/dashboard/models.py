@@ -44,3 +44,8 @@ class ValidatedInformation(models.Model):
     parking_availability=models.CharField(max_length=500)
 
 
+class PropertyDetail(models.Model):
+    property_id= models.IntegerField(unique=True)
+    for_rent=models.CharField(max_length=50)
+    detail=models.CharField(max_length=5000,blank=True)
+

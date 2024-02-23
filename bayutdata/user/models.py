@@ -28,10 +28,13 @@ class User(AbstractUser):
 class EmailOtp(models.Model):
     email=models.ForeignKey(User,on_delete=models.CASCADE)
     otp=models.CharField(max_length=6)
-    expiration_time = models.DateTimeField(default=timezone.now() + timedelta(minutes=2))
+    expiration_time = models.DateTimeField(default=timezone.now() + timedelta(minutes=5))
 
     def __str__(self):
         return f"OTP for {self.email}"
+    
+
+
     
 
 

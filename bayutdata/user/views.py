@@ -16,6 +16,7 @@ from rest_framework.views import APIView
 from django.core.exceptions import PermissionDenied
 from rest_framework.decorators import action
 import os
+import hashlib
 
 
 
@@ -162,15 +163,22 @@ class VerifyOTP(APIView):
     def post(self, request):
         otp_entered = request.data.get('otp')
         email = request.data.get('email')
+        if not email or not otp_entered:
+            return Response({'error':('Please provide both email and OTP.')}, status=status.HTTP_400_BAD_REQUEST)
         user_email=User.objects.get(email=email)
-        otp_object = EmailOtp.objects.get(email=user_email)
-        if not otp_entered or not email:
-            return Response({'error':('Please provide both email and otp.')}, status=status.HTTP_400_BAD_REQUEST)
-        if otp_object.otp == otp_entered:
-            otp_object.delete()
-            return Response({'message': 'OTP verified successfully.'}, status=status.HTTP_200_OK)
+        if user_email:
+            otp_object = EmailOtp.objects.filter(email=user_email)
+            if otp_object:
+                otp_objectt = EmailOtp.objects.get(email=user_email)
+                if otp_objectt.otp == otp_entered:
+                    otp_objectt.delete()
+                    return Response({'message': 'OTP verified successfully.'}, status=status.HTTP_200_OK)
+                else:
+                    return Response({'error': 'Invalid OTP.'}, status=status.HTTP_400_BAD_REQUEST)
+            else:
+                return Response({'error': 'OTP not Found.'}, status=status.HTTP_400_BAD_REQUEST)
         else:
-            return Response({'error': 'Invalid OTP.'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'user email not found.'}, status=status.HTTP_400_BAD_REQUEST)
 
 def delete_user_image(instance):
     if instance.image:
