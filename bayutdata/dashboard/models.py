@@ -16,7 +16,7 @@ class ApartmentDetail(models.Model):
 class BuildingInformation(models.Model):
     building_id = models.IntegerField(unique=True)
     building_name = models.CharField(max_length=500)
-    year_of_completion=models.CharField(max_length=5)
+    year_of_completion=models.CharField(max_length=6)
     total_floors=models.CharField(max_length=5)
     swimming_pools=models.CharField(max_length=10)
     total_parking_spaces=models.CharField(max_length=10)
