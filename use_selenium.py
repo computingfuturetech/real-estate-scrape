@@ -78,11 +78,11 @@ existing_validated_ids = read_existing_ids('validated_information2.csv')
 existing_project_ids = read_existing_ids('project_information2.csv')
 
 
-new_url = 'https://www.bayut.com/to-rent/apartments/dubai/dubai-marina/?rent_frequency=monthly'
-page_numbers = [''] + [f'page-{i}/' for i in range(2, 10)]
+new_url = 'https://www.bayut.com/to-rent/apartments/dubai/dubai-marina/?rent_frequency=daily'
+page_numbers = [''] + [f'page-{i}/' for i in range(2, 7)]
 
 for page_number in page_numbers:
-        current_url = f'https://www.bayut.com/for-sale/apartments/dubai/dubai-marina/{page_number}?rent_frequency=monthly'
+        current_url = f'https://www.bayut.com/for-sale/apartments/dubai/dubai-marina/{page_number}?rent_frequency=daily'
         # current_url = f'{new_url}{page_number}'
         response = requests.get(current_url)
         if response.status_code == 200:

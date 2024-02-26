@@ -1,17 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.utils import timezone
-from datetime import datetime, timedelta
-import re,os
-
+import os
+from django.db import models
 
 def user_image_path(instance, filename):
     user_id = instance.id
     _, file_extension = os.path.splitext(filename)
     new_filename = f"{user_id}pfp{file_extension}"
     return os.path.join('store/images', new_filename)
-
-
 
 class User(AbstractUser):
     email=models.EmailField(unique=True)
@@ -23,17 +19,10 @@ class User(AbstractUser):
     def __str__(self):
         return self.username
     
-
-
 class EmailOtp(models.Model):
-    email=models.ForeignKey(User,on_delete=models.CASCADE)
-    otp=models.CharField(max_length=6)
-    expiration_time = models.DateTimeField(default=timezone.now() + timedelta(minutes=5))
-
-    def __str__(self):
-        return f"OTP for {self.email}"
-    
-
+    email = models.ForeignKey(User, on_delete=models.CASCADE)
+    otp = models.CharField(max_length=6)
+    expiration_time = models.TimeField()
 
     
 
