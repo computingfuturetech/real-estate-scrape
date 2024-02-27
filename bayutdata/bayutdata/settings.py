@@ -15,9 +15,10 @@ import os
 from datetime import timedelta
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MEDIA_URL = '/media/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+MEDIA_URL = '/media/'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,7 +32,7 @@ SECRET_KEY = 'django-insecure-4gz%3zj-%sm$gi*qhcmm#%z9ezhntwoz&8*rncfqn43$e-uvab
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','10.0.2.2','192.168.0.189','192.168.0.110']
 
 
 # Application definition
@@ -45,10 +46,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
-    'dashboard',
     'djoser',
     'user',
     'corsheaders',
+    'django_crontab',
+    'dashboard',
 ]
 
 APP_DIRS = True
@@ -63,6 +65,28 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://localhost:6379/1', 
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+SESSION_CACHE_ALIAS = 'default'
+
+CRONJOBS = [
+    ('*/1 * * * *', 'user.cron.delete_otp'),
+    ('*/1 * * * *', 'dashboard.cron.insert_data_from_csv'),
+    ('*/1 * * * *', 'dashboard.cron.insert_building_data_from_csv'),
+    ('*/1 * * * *', 'dashboard.cron.insert_project_data_from_csv'),
+    ('*/1 * * * *', 'dashboard.cron.insert_validated_data_from_csv')
+]
+
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
@@ -163,7 +187,7 @@ DJOSER = {
 
 SIMPLE_JWT = {
    'AUTH_HEADER_TYPES': ('JWT',),
-   'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+   'ACCESS_TOKEN_LIFETIME': timedelta(days=30),
    'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1), 
 }
 
@@ -174,3 +198,11 @@ AUTHENTICATION_BACKENDS = (
 
 
 AUTH_USER_MODEL='user.User'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS=True  
+EMAIL_HOST_USER='anasircft@gmail.com'
+EMAIL_HOST_PASSWORD='vlnw cbss thko jjoj'

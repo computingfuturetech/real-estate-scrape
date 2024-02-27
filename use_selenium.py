@@ -12,7 +12,7 @@ def scrape_and_write_data(url, headers, csv_file_path):
     driver = webdriver.Chrome()
     try:
         driver.get(url)
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(driver, 5)
         target_element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, '_208d68ae')))
         if target_element:
             target_element.click()
@@ -64,37 +64,26 @@ def scrape_and_write_data(url, headers, csv_file_path):
 
 
 
+def read_existing_ids(csv_file_path):
+    existing_ids = set()
+    with open(csv_file_path, 'r', newline='', encoding='utf-8') as csvfile:
+        reader = csv.reader(csvfile)
+        next(reader) 
+        for row in reader:
+            existing_ids.add(int(row[0]))  
+    return existing_ids
 
-new_url = 'https://www.bayut.com/for-sale/apartments/dubai/dubai-marina/'
-page_numbers = [
-    '',
-    'page-2/',
-    'page-3/',
-    'page-4/',
-    'page-5/',
-    'page-6/',
-    'page-7/',
-    'page-8/',
-    'page-9/',
-    'page-10/',
-    'page-11/',
-    'page-12/',
-    'page-13/',
-    'page-14/',
-    'page-15/',
-    'page-16/',
-    'page-17/',
-    'page-18/',
-    'page-19/',
-    'page-20/',
-    'page-21/',
-    'page-22/',
-    'page-23/',
-    'page-24/'
-]
+existing_building_ids = read_existing_ids('building_information2.csv')
+existing_validated_ids = read_existing_ids('validated_information2.csv')
+existing_project_ids = read_existing_ids('project_information2.csv')
+
+
+new_url = 'https://www.bayut.com/to-rent/apartments/dubai/dubai-marina/?rent_frequency=daily'
+page_numbers = [''] + [f'page-{i}/' for i in range(2, 7)]
 
 for page_number in page_numbers:
-        current_url = f'{new_url}{page_number}'
+        current_url = f'https://www.bayut.com/for-sale/apartments/dubai/dubai-marina/{page_number}?rent_frequency=daily'
+        # current_url = f'{new_url}{page_number}'
         response = requests.get(current_url)
         if response.status_code == 200:
             soup = BeautifulSoup(response.content, 'html.parser')
@@ -107,9 +96,9 @@ for page_number in page_numbers:
                     listing_ids = re.findall(r'"listing_id":\s*\[([^\]]+)]', first_script_content)
                     if listing_ids:
                         listing_ids = [int(id.strip()) for id in listing_ids[0].split(',')]
-                        csv_file_path1 = 'building_information1.csv'
-                        csv_file_path2 = 'validated_information.csv'
-                        csv_file_path3 = 'project_information.csv'
+                        csv_file_path1 = 'building_information2.csv'
+                        csv_file_path2 = 'validated_information2.csv'
+                        csv_file_path3 = 'project_information2.csv'
                         
 
                         building_info_headers = ['id', 'Building Name', 'Year of Completion', 'Total Floors', 'Swimming Pools',
@@ -123,6 +112,8 @@ for page_number in page_numbers:
 
                         
                         for i in range(len(listing_ids)):
+                            if listing_ids[i] in existing_building_ids or listing_ids[i] in existing_validated_ids or listing_ids[i] in existing_project_ids:
+                                continue
                             url = f'https://www.bayut.com/property/details-{listing_ids[i]}.html'
                             scrape_and_write_data(url, building_info_headers, csv_file_path1)
                             scrape_and_write_data(url, validated_info_headers, csv_file_path2)
