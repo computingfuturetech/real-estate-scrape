@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.core.cache import cache
 from rest_framework import generics,status
-from .models import BuildingInformation,ProjectInformation
-from .serializers import BuildingInformationSerializer,ProjectInformationSerializer
+from .models import BuildingInformation,ProjectInformation,ApartmentDetail,PropertyDetail
+from .serializers import BuildingInformationSerializer,ProjectInformationSerializer,PricesAgainstProjectCompletionSerializer,PricesAgainstNumberOfRoomsSerializer,PricesAgainstAreaOfApartmentsSerializer
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
@@ -122,5 +122,92 @@ class ProjectInformationViewSet(generics.RetrieveAPIView):
                     print('Data retrieved from database')
                 serializer = self.get_serializer(project_information,many=True)
                 return Response(serializer.data, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+
+class PricesAgainstProjectCompletionViewSet(generics.RetrieveAPIView):
+    queryset = ProjectInformation.objects.all()
+    serializer_class = PricesAgainstProjectCompletionSerializer
+
+    def get(self, request, *args, **kwargs):
+        try:
+            projects = self.get_queryset()
+            response_data = []
+            for project in projects:
+                project_id = project.project_id
+                apartment_details = ApartmentDetail.objects.filter(apartment_id=project_id)
+                if not apartment_details.exists():
+                    continue                
+                prices = [detail.price for detail in apartment_details if detail.price is not None]
+                if not prices:
+                    continue    
+                serializer = self.get_serializer(project)
+                project_data = serializer.data
+                project_data['prices'] = prices
+                response_data.append(project_data)
+            return Response(response_data, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class PricesAgainstNumberOfRoomsViewSet(generics.RetrieveAPIView):
+    queryset = ApartmentDetail.objects.all()
+    serializer_class = PricesAgainstNumberOfRoomsSerializer
+
+    def get(self, request, *args, **kwargs):
+        try:
+            to_rent = request.GET.get('to_rent')
+            apartment_details = ApartmentDetail.objects.all()
+            if to_rent:
+                property_details = PropertyDetail.objects.filter(for_rent=to_rent)
+                if property_details:
+                    property_ids = property_details.values_list('property_id', flat=True)
+                    apartment_details = apartment_details.filter(apartment_id__in=property_ids)
+                else:
+                    response_data={
+                        'status':'Not Found'
+                    }
+                    return Response(response_data, status=status.HTTP_400_BAD_REQUEST)
+            else:
+                list_of_filters = ['Yearly', 'Monthly', 'Daily', 'Weekly']
+                rental_ids = set()
+                for rent_type in list_of_filters:
+                    property_details = PropertyDetail.objects.filter(for_rent=rent_type)
+                    rental_ids.update(property_details.values_list('property_id', flat=True))
+                    apartment_details = ApartmentDetail.objects.exclude(apartment_id__in=rental_ids)
+            serializer = self.get_serializer(apartment_details, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class PricesAgainstAreaOfApartmentsViewSet(generics.RetrieveAPIView):
+    queryset = ApartmentDetail.objects.all()
+    serializer_class = PricesAgainstAreaOfApartmentsSerializer
+
+    def get(self, request, *args, **kwargs):
+        try:
+            to_rent = request.GET.get('to_rent')
+            apartment_details = ApartmentDetail.objects.all()
+            if to_rent:
+                property_details = PropertyDetail.objects.filter(for_rent=to_rent)
+                if property_details:
+                    property_ids = property_details.values_list('property_id', flat=True)
+                    apartment_details = apartment_details.filter(apartment_id__in=property_ids)
+                else:
+                    response_data={
+                        'status':'Not Found'
+                    }
+                    return Response(response_data, status=status.HTTP_400_BAD_REQUEST)
+            else:
+                list_of_filters = ['Yearly', 'Monthly', 'Daily', 'Weekly']
+                rental_ids = set()
+                for rent_type in list_of_filters:
+                    property_details = PropertyDetail.objects.filter(for_rent=rent_type)
+                    rental_ids.update(property_details.values_list('property_id', flat=True))
+                    apartment_details = ApartmentDetail.objects.exclude(apartment_id__in=rental_ids)
+            serializer = self.get_serializer(apartment_details, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
