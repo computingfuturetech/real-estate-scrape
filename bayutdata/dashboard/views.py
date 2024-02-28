@@ -6,6 +6,12 @@ from .serializers import BuildingInformationSerializer,ProjectInformationSeriali
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
+from django.db.models import Min, Max, Avg
+from django.db.models import F, FloatField
+from math import floor
+from django.db.models.functions import Round
+from decimal import Decimal
+import json
 
 
 def test_redis(request):
@@ -185,19 +191,42 @@ class PricesAgainstNumberOfRoomsViewSet(generics.RetrieveAPIView):
 class PricesAgainstAreaOfApartmentsViewSet(generics.RetrieveAPIView):
     queryset = ApartmentDetail.objects.all()
     serializer_class = PricesAgainstAreaOfApartmentsSerializer
-
     def get(self, request, *args, **kwargs):
         try:
             to_rent = request.GET.get('to_rent')
-            apartment_details = ApartmentDetail.objects.all()
             if to_rent:
                 property_details = PropertyDetail.objects.filter(for_rent=to_rent)
                 if property_details:
                     property_ids = property_details.values_list('property_id', flat=True)
-                    apartment_details = apartment_details.filter(apartment_id__in=property_ids)
+                    apartment_details = self.queryset.filter(apartment_id__in=property_ids)
+                    min_area = apartment_details.aggregate(min_area=Min('area'))['min_area']
+                    max_area = apartment_details.aggregate(max_area=Max('area'))['max_area']
+                    num_midpoints = 7
+                    interval = (max_area - min_area) / (num_midpoints + 1)
+                    midpoints = [min_area]
+                    for i in range(1, num_midpoints + 1):
+                        midpoint = min_area + interval * i
+                        midpoints.append(midpoint)
+                    midpoints.append(max_area)
+                    interval_info = []
+                    for i in range(len(midpoints) - 1):
+                        start_point = round(midpoints[i], 1)
+                        end_point = round(midpoints[i + 1],1)
+                        prices_within_interval = apartment_details.filter(area__gte=start_point, area__lte=end_point)
+                        average_price = round(prices_within_interval.aggregate(avg_price=Avg('price'))['avg_price'],1)
+                        min_price = prices_within_interval.aggregate(min_price=Min('price'))['min_price']
+                        max_price = prices_within_interval.aggregate(max_price=Max('price'))['max_price']
+                        interval_dict = {
+                            'start_point': start_point,
+                            'end_point': end_point,
+                            'average_price': average_price,
+                            'min_price': min_price,
+                            'max_price': max_price
+                        }
+                        interval_info.append(interval_dict)
                 else:
-                    response_data={
-                        'status':'Not Found'
+                    response_data = {
+                        'status': 'Not Found'
                     }
                     return Response(response_data, status=status.HTTP_400_BAD_REQUEST)
             else:
@@ -206,8 +235,32 @@ class PricesAgainstAreaOfApartmentsViewSet(generics.RetrieveAPIView):
                 for rent_type in list_of_filters:
                     property_details = PropertyDetail.objects.filter(for_rent=rent_type)
                     rental_ids.update(property_details.values_list('property_id', flat=True))
-                    apartment_details = ApartmentDetail.objects.exclude(apartment_id__in=rental_ids)
-            serializer = self.get_serializer(apartment_details, many=True)
-            return Response(serializer.data, status=status.HTTP_200_OK)
+                apartment_details = self.queryset.exclude(apartment_id__in=rental_ids)
+                min_area = apartment_details.aggregate(min_area=Min('area'))['min_area']
+                max_area = apartment_details.aggregate(max_area=Max('area'))['max_area']
+                num_midpoints = 7
+                interval = (max_area - min_area) / (num_midpoints + 1)
+                midpoints = [min_area]
+                for i in range(1, num_midpoints + 1):
+                    midpoint = min_area + interval * i
+                    midpoints.append(midpoint)
+                midpoints.append(max_area)
+                interval_info = []
+                for i in range(len(midpoints) - 1):
+                    start_point = round(midpoints[i], 1)
+                    end_point = round(midpoints[i + 1],1)
+                    prices_within_interval = apartment_details.filter(area__gte=start_point, area__lte=end_point)
+                    average_price = round(prices_within_interval.aggregate(avg_price=Avg('price'))['avg_price'],1)
+                    min_price = prices_within_interval.aggregate(min_price=Min('price'))['min_price']
+                    max_price = prices_within_interval.aggregate(max_price=Max('price'))['max_price']
+                    interval_dict = {
+                        'start_point': start_point,
+                        'end_point': end_point,
+                        'average_price': average_price,
+                        'min_price': min_price,
+                        'max_price': max_price
+                    }
+                    interval_info.append(interval_dict)
+            return Response(interval_info, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
