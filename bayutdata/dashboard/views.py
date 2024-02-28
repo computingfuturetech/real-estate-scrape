@@ -132,7 +132,7 @@ class ProjectInformationViewSet(generics.RetrieveAPIView):
                 return Response(serializer.data, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
+
 
 class PricesAgainstProjectCompletionViewSet(generics.RetrieveAPIView):
     queryset = ProjectInformation.objects.all()
@@ -158,6 +158,36 @@ class PricesAgainstProjectCompletionViewSet(generics.RetrieveAPIView):
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+def data_convert_into_interval_for_rooms(apartment_details):
+    min_room = apartment_details.aggregate(min_room=Min('rooms'))['min_room']
+    max_room = apartment_details.aggregate(max_room=Max('rooms'))['max_room']  # Corrected here
+    num_midpoints = 7
+    interval = (max_room - min_room) / (num_midpoints + 1)
+    midpoints = [min_room]
+    for i in range(1, num_midpoints + 1):
+        midpoint = min_room + interval * i
+        midpoints.append(midpoint)
+    midpoints.append(max_room)
+    interval_info = []
+    for i in range(len(midpoints) - 1):
+        start_point = round(midpoints[i], 1)
+        end_point = round(midpoints[i + 1], 1)
+        prices_within_interval = apartment_details.filter(rooms__gte=start_point, rooms__lte=end_point)
+        average_price_result = prices_within_interval.aggregate(avg_price=Avg('price'))
+        average_price = round(average_price_result['avg_price'], 1) if average_price_result['avg_price'] is not None else None
+        min_price = prices_within_interval.aggregate(min_price=Min('price'))['min_price']
+        max_price = prices_within_interval.aggregate(max_price=Max('price'))['max_price']
+        if average_price is not None and min_price is not None and max_price is not None:
+            interval_dict = {
+                'start_point': start_point,
+                'end_point': end_point,
+                'average_price': average_price,
+                'min_price': min_price,
+                'max_price': max_price
+            }
+            interval_info.append(interval_dict)
+    return interval_info      
+
 
 class PricesAgainstNumberOfRoomsViewSet(generics.RetrieveAPIView):
     queryset = ApartmentDetail.objects.all()
@@ -172,9 +202,10 @@ class PricesAgainstNumberOfRoomsViewSet(generics.RetrieveAPIView):
                 if property_details:
                     property_ids = property_details.values_list('property_id', flat=True)
                     apartment_details = apartment_details.filter(apartment_id__in=property_ids)
+                    interval_info=data_convert_into_interval_for_rooms(apartment_details)
                 else:
-                    response_data={
-                        'status':'Not Found'
+                    response_data = {
+                        'status': 'Not Found'
                     }
                     return Response(response_data, status=status.HTTP_400_BAD_REQUEST)
             else:
@@ -183,9 +214,15 @@ class PricesAgainstNumberOfRoomsViewSet(generics.RetrieveAPIView):
                 for rent_type in list_of_filters:
                     property_details = PropertyDetail.objects.filter(for_rent=rent_type)
                     rental_ids.update(property_details.values_list('property_id', flat=True))
-                    apartment_details = ApartmentDetail.objects.exclude(apartment_id__in=rental_ids)
-            serializer = self.get_serializer(apartment_details, many=True)
-            return Response(serializer.data, status=status.HTTP_200_OK)
+                    if rental_ids: 
+                        apartment_details = self.queryset.exclude(apartment_id__in=rental_ids)
+                        interval_info = data_convert_into_interval_for_rooms(apartment_details)
+                    else:
+                        response_data = {
+                            'status': 'Rental ids not found'
+                        }
+                        return Response(response_data, status=status.HTTP_400_BAD_REQUEST)
+            return Response(interval_info, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -199,6 +236,7 @@ def data_convert_into_interval(apartment_details):
         midpoint = min_area + interval * i
         midpoints.append(midpoint)
     midpoints.append(max_area)
+    print(midpoints)
     interval_info = []
     for i in range(len(midpoints) - 1):
         start_point = round(midpoints[i], 1)
@@ -208,16 +246,16 @@ def data_convert_into_interval(apartment_details):
         average_price = round(average_price_result['avg_price'], 1) if average_price_result['avg_price'] is not None else None
         min_price = prices_within_interval.aggregate(min_price=Min('price'))['min_price']
         max_price = prices_within_interval.aggregate(max_price=Max('price'))['max_price']
-        interval_dict = {
-            'start_point': start_point,
-            'end_point': end_point,
-            'average_price': average_price,
-            'min_price': min_price,
-            'max_price': max_price
-        }
-        interval_info.append(interval_dict)
-    return interval_info
-
+        if average_price is not None and min_price is not None and max_price is not None:
+            interval_dict = {
+                'start_point': start_point,
+                'end_point': end_point,
+                'average_price': average_price,
+                'min_price': min_price,
+                'max_price': max_price
+            }
+            interval_info.append(interval_dict)
+    return interval_info       
 
 
 class PricesAgainstAreaOfApartmentsViewSet(generics.RetrieveAPIView):
@@ -227,7 +265,6 @@ class PricesAgainstAreaOfApartmentsViewSet(generics.RetrieveAPIView):
         try:
             to_rent = request.GET.get('to_rent')
             if to_rent:
-                print(to_rent)
                 property_details = PropertyDetail.objects.filter(for_rent=to_rent)
                 if property_details:
                     property_ids = property_details.values_list('property_id', flat=True)
@@ -345,8 +382,8 @@ class PropertyDetailViewSet(generics.ListAPIView):
             return {
                 'property_id': apartment_id,
                 'for_rent': "nan",
-                'state':'nan',
-                'sub_state':'nan',
+                'state':'Dubai',
+                'sub_state':'Dubai Marina',
                 'property_type':'for_sale',
             }
 
