@@ -1,17 +1,19 @@
 from django.shortcuts import render
 from django.core.cache import cache
 from rest_framework import generics,status
-from .models import BuildingInformation,ProjectInformation,ApartmentDetail,PropertyDetail
-from .serializers import BuildingInformationSerializer,ProjectInformationSerializer,PricesAgainstProjectCompletionSerializer,PricesAgainstNumberOfRoomsSerializer,PricesAgainstAreaOfApartmentsSerializer
+from .models import BuildingInformation,ProjectInformation,ApartmentDetail,PropertyDetail,ValidatedInformation
+from .serializers import BuildingInformationSerializer,ProjectInformationSerializer,PricesAgainstProjectCompletionSerializer,ApartmentDetailSerializer
+from .serializers import PricesAgainstNumberOfRoomsSerializer,PricesAgainstAreaOfApartmentsSerializer,ValidatedInformationSerializer,PropertyDetailSerializer
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Min, Max, Avg
-from django.db.models import F, FloatField
-from math import floor
-from django.db.models.functions import Round
-from decimal import Decimal
-import json
+from rest_framework.pagination import PageNumberPagination
+from math import ceil
+from rest_framework.pagination import PageNumberPagination
+import pandas as pd
+import os
+from django.conf import settings
 
 
 def test_redis(request):
@@ -187,6 +189,36 @@ class PricesAgainstNumberOfRoomsViewSet(generics.RetrieveAPIView):
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+def data_convert_into_interval(apartment_details):
+    min_area = apartment_details.aggregate(min_area=Min('area'))['min_area']
+    max_area = apartment_details.aggregate(max_area=Max('area'))['max_area']
+    num_midpoints = 7
+    interval = (max_area - min_area) / (num_midpoints + 1)
+    midpoints = [min_area]
+    for i in range(1, num_midpoints + 1):
+        midpoint = min_area + interval * i
+        midpoints.append(midpoint)
+    midpoints.append(max_area)
+    interval_info = []
+    for i in range(len(midpoints) - 1):
+        start_point = round(midpoints[i], 1)
+        end_point = round(midpoints[i + 1], 1)
+        prices_within_interval = apartment_details.filter(area__gte=start_point, area__lte=end_point)
+        average_price_result = prices_within_interval.aggregate(avg_price=Avg('price'))
+        average_price = round(average_price_result['avg_price'], 1) if average_price_result['avg_price'] is not None else None
+        min_price = prices_within_interval.aggregate(min_price=Min('price'))['min_price']
+        max_price = prices_within_interval.aggregate(max_price=Max('price'))['max_price']
+        interval_dict = {
+            'start_point': start_point,
+            'end_point': end_point,
+            'average_price': average_price,
+            'min_price': min_price,
+            'max_price': max_price
+        }
+        interval_info.append(interval_dict)
+    return interval_info
+
+
 
 class PricesAgainstAreaOfApartmentsViewSet(generics.RetrieveAPIView):
     queryset = ApartmentDetail.objects.all()
@@ -195,35 +227,12 @@ class PricesAgainstAreaOfApartmentsViewSet(generics.RetrieveAPIView):
         try:
             to_rent = request.GET.get('to_rent')
             if to_rent:
+                print(to_rent)
                 property_details = PropertyDetail.objects.filter(for_rent=to_rent)
                 if property_details:
                     property_ids = property_details.values_list('property_id', flat=True)
                     apartment_details = self.queryset.filter(apartment_id__in=property_ids)
-                    min_area = apartment_details.aggregate(min_area=Min('area'))['min_area']
-                    max_area = apartment_details.aggregate(max_area=Max('area'))['max_area']
-                    num_midpoints = 7
-                    interval = (max_area - min_area) / (num_midpoints + 1)
-                    midpoints = [min_area]
-                    for i in range(1, num_midpoints + 1):
-                        midpoint = min_area + interval * i
-                        midpoints.append(midpoint)
-                    midpoints.append(max_area)
-                    interval_info = []
-                    for i in range(len(midpoints) - 1):
-                        start_point = round(midpoints[i], 1)
-                        end_point = round(midpoints[i + 1],1)
-                        prices_within_interval = apartment_details.filter(area__gte=start_point, area__lte=end_point)
-                        average_price = round(prices_within_interval.aggregate(avg_price=Avg('price'))['avg_price'],1)
-                        min_price = prices_within_interval.aggregate(min_price=Min('price'))['min_price']
-                        max_price = prices_within_interval.aggregate(max_price=Max('price'))['max_price']
-                        interval_dict = {
-                            'start_point': start_point,
-                            'end_point': end_point,
-                            'average_price': average_price,
-                            'min_price': min_price,
-                            'max_price': max_price
-                        }
-                        interval_info.append(interval_dict)
+                    interval_info=data_convert_into_interval(apartment_details)
                 else:
                     response_data = {
                         'status': 'Not Found'
@@ -235,32 +244,127 @@ class PricesAgainstAreaOfApartmentsViewSet(generics.RetrieveAPIView):
                 for rent_type in list_of_filters:
                     property_details = PropertyDetail.objects.filter(for_rent=rent_type)
                     rental_ids.update(property_details.values_list('property_id', flat=True))
-                apartment_details = self.queryset.exclude(apartment_id__in=rental_ids)
-                min_area = apartment_details.aggregate(min_area=Min('area'))['min_area']
-                max_area = apartment_details.aggregate(max_area=Max('area'))['max_area']
-                num_midpoints = 7
-                interval = (max_area - min_area) / (num_midpoints + 1)
-                midpoints = [min_area]
-                for i in range(1, num_midpoints + 1):
-                    midpoint = min_area + interval * i
-                    midpoints.append(midpoint)
-                midpoints.append(max_area)
-                interval_info = []
-                for i in range(len(midpoints) - 1):
-                    start_point = round(midpoints[i], 1)
-                    end_point = round(midpoints[i + 1],1)
-                    prices_within_interval = apartment_details.filter(area__gte=start_point, area__lte=end_point)
-                    average_price = round(prices_within_interval.aggregate(avg_price=Avg('price'))['avg_price'],1)
-                    min_price = prices_within_interval.aggregate(min_price=Min('price'))['min_price']
-                    max_price = prices_within_interval.aggregate(max_price=Max('price'))['max_price']
-                    interval_dict = {
-                        'start_point': start_point,
-                        'end_point': end_point,
-                        'average_price': average_price,
-                        'min_price': min_price,
-                        'max_price': max_price
+                if rental_ids: 
+                    apartment_details = self.queryset.exclude(apartment_id__in=rental_ids)
+                    interval_info = data_convert_into_interval(apartment_details)
+                else:
+                    response_data = {
+                        'status': 'Rental ids not found'
                     }
-                    interval_info.append(interval_dict)
+                    return Response(response_data, status=status.HTTP_400_BAD_REQUEST) 
             return Response(interval_info, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class MyPagination(PageNumberPagination):
+    page_size = 100
+    max_page_size = 100
+
+class PropertyDetailViewSet(generics.ListAPIView):
+    pagination_class = MyPagination
+
+    def get_queryset(self):
+        return ApartmentDetail.objects.all().order_by('id')
+    
+    def get(self, request, *args, **kwargs):
+        apartment_details = self.get_queryset()
+        total_apartments = apartment_details.count()
+        page = self.paginate_queryset(apartment_details)
+        serialized_data = [self.get_apartment_response_data(apartment_detail) for apartment_detail in page]
+        total_pages = ceil(total_apartments / self.pagination_class.page_size)
+        response_data = {
+            'total_pages': total_pages,
+            'apartments': serialized_data
+        }
+
+        return Response(response_data, status=status.HTTP_200_OK)
+   
+    def get_apartment_response_data(self, apartment_detail):
+        apartment_id = apartment_detail.apartment_id
+
+        building_information = BuildingInformation.objects.filter(building_id=apartment_id).first()
+        validated_information = ValidatedInformation.objects.filter(validated_id=apartment_id).first()
+        project_information = ProjectInformation.objects.filter(project_id=apartment_id).first()
+        property_detail = PropertyDetail.objects.filter(property_id=apartment_id).first()
+
+        building_data = self.get_building_response_data(building_information, apartment_id)
+        validated_data = self.get_validated_response_data(validated_information, apartment_id)
+        project_data = self.get_project_response_data(project_information, apartment_id)
+        property_data = self.get_property_response_data(property_detail, apartment_id)
+
+        response_item = {
+            'apartment_detail': ApartmentDetailSerializer(apartment_detail).data,
+            'building_information': building_data,
+            'validated_information': validated_data,
+            'project_information': project_data,
+            'property_detail': property_data
+        }
+        return response_item
+
+    def get_building_response_data(self, building_information, apartment_id):
+        if building_information:
+            return BuildingInformationSerializer(building_information).data
+        else:
+            return {
+                'building_id': apartment_id,
+                'building_name': "nan",
+                'year_of_completion': "nan",
+                'total_floors': "nan",
+                'swimming_pools': "nan",
+                'total_parking_spaces': "nan",
+                'elevators': "nan"
+            }
+
+    def get_validated_response_data(self, validated_information, apartment_id):
+        if validated_information:
+            return ValidatedInformationSerializer(validated_information).data
+        else:
+            return {
+                'validated_id': apartment_id,
+                'developer': "nan",
+                'ownership': "nan",
+                'usage': "nan",
+            }
+
+    def get_project_response_data(self, project_information, apartment_id):
+        if project_information:
+            return ProjectInformationSerializer(project_information).data
+        else:
+            return {
+                'project_id': apartment_id,
+                'project_name': "nan",
+                'completion': "nan",
+                'handover': "nan",
+            }
+
+    def get_property_response_data(self, property_detail, apartment_id):
+        if property_detail:
+            return PropertyDetailSerializer(property_detail).data
+        else:
+            return {
+                'property_id': apartment_id,
+                'for_rent': "nan",
+                'state':'nan',
+                'sub_state':'nan',
+                'property_type':'for_sale',
+            }
+
+
+# def insert_data_from_csv():
+#     try:
+#         csv_file_path = os.path.join(settings.MEDIA_ROOT, 'csvfiles/source_file_data.csv')
+#         df = pd.read_csv(csv_file_path, header=0)
+#         for index, row in df.iterrows():
+#             apartment_id = row['id']
+#             try:
+#                 apartment_detail = ApartmentDetail.objects.get(apartment_id=apartment_id)
+#                 apartment_detail.title = row['Title']
+#                 apartment_detail.save()
+#                 print(f"Updated title for apartment with ID {apartment_id}")
+#             except ApartmentDetail.DoesNotExist:
+#                 print(f"Apartment with ID {apartment_id} not found in the database.")
+#     except FileNotFoundError:
+#         print(f"File {csv_file_path} not found.")
+
+# insert_data_from_csv()

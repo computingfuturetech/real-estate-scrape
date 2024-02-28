@@ -6,6 +6,7 @@ class ApartmentDetail(models.Model):
     rooms = models.IntegerField()
     baths = models.IntegerField()
     area = models.FloatField()
+    title= models.CharField(max_length=500,blank=True,null=True)
     furnishing_status = models.CharField(max_length=20, null=True, blank=True)
     latitude = models.FloatField()
     longitude = models.FloatField()
@@ -47,5 +48,8 @@ class ValidatedInformation(models.Model):
 class PropertyDetail(models.Model):
     property_id= models.IntegerField(unique=True)
     for_rent=models.CharField(max_length=50)
+    state = models.CharField(max_length=100, default='Dubai')
+    sub_state=models.CharField(max_length=100,default='Dubai Marina')
+    property_type=models.CharField(max_length=100,default='rent')
     detail=models.CharField(max_length=5000,blank=True)
 

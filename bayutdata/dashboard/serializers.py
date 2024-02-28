@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import BuildingInformation,ProjectInformation,ApartmentDetail
+from .models import BuildingInformation,ProjectInformation,ApartmentDetail,ValidatedInformation,PropertyDetail
 
 
 
@@ -11,8 +11,23 @@ class BuildingInformationSerializer(serializers.ModelSerializer):
 class ProjectInformationSerializer(serializers.ModelSerializer):
     class Meta:
         model=ProjectInformation
-        fields=['project_id','project_name','last_inspected','completion','handover']
-    
+        fields=['project_id','project_name','completion','handover']
+
+class ValidatedInformationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=ValidatedInformation
+        fields=['validated_id','developer','ownership','usage']
+
+class ApartmentDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=ApartmentDetail
+        fields=['apartment_id','price','rooms','baths','area','furnishing_status','title']
+
+class PropertyDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=PropertyDetail
+        fields=['property_id','for_rent']
+
 class PricesAgainstProjectCompletionSerializer(serializers.ModelSerializer):
     class Meta:
         model=ProjectInformation
