@@ -47,9 +47,11 @@ class ValidatedInformation(models.Model):
 
 class PropertyDetail(models.Model):
     property_id= models.IntegerField(unique=True)
-    for_rent=models.CharField(max_length=50)
+    type=models.CharField(max_length=50)
+    purpose=models.CharField(max_length=50)
+    completion=models.CharField(max_length=50,default='Ready')
+    added_on=models.CharField(max_length=100)
     state = models.CharField(max_length=100, default='Dubai')
     sub_state=models.CharField(max_length=100,default='Dubai Marina')
-    property_type=models.CharField(max_length=100,default='rent')
-    detail=models.CharField(max_length=5000,blank=True)
+
 

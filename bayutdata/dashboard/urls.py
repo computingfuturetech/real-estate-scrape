@@ -11,3 +11,4 @@ urlpatterns = [
     path('paaa/',PricesAgainstAreaOfApartmentsViewSet.as_view(),name='panr'),
     path('property_detail/',PropertyDetailViewSet.as_view(),name='property_detail'),
 ]
+

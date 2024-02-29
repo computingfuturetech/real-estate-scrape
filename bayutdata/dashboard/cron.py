@@ -241,10 +241,15 @@ def insert_property_detail_from_csv():
         for index, row in df.iterrows():
             property_id = str(row['id']).strip()
             if not PropertyDetail.objects.filter(property_id=property_id).exists():
+                completion_value = row['Completion']
+                if pd.isna(completion_value) or completion_value.strip() == "":
+                    completion_value = "Ready"  
                 data = {
                     'property_id': property_id,
-                    'for_rent': row['rent_frequency'],
-                    'detail': row['property_detail'],
+                    'type': row['Type'],
+                    'purpose': row['Purpose'],
+                    'completion': completion_value,
+                    'added_on': row['Added on'],
                 }
                 property_information = PropertyDetail(**data)
                 property_information.save()

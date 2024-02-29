@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.core.cache import cache
 from rest_framework import generics,status
-from .models import BuildingInformation,ProjectInformation,ApartmentDetail,PropertyDetail,ValidatedInformation
-from .serializers import BuildingInformationSerializer,ProjectInformationSerializer,PricesAgainstProjectCompletionSerializer,ApartmentDetailSerializer
-from .serializers import PricesAgainstNumberOfRoomsSerializer,PricesAgainstAreaOfApartmentsSerializer,ValidatedInformationSerializer,PropertyDetailSerializer
+from .models import BuildingInformation,ProjectInformation,ApartmentDetail,ValidatedInformation,PropertyDetail
+from .serializers import BuildingInformationSerializer,ProjectInformationSerializer,PricesAgainstProjectCompletionSerializer,ApartmentDetailSerializer,PropertyDetailSerializer
+from .serializers import PricesAgainstNumberOfRoomsSerializer,PricesAgainstAreaOfApartmentsSerializer,ValidatedInformationSerializer
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
@@ -134,6 +134,7 @@ class ProjectInformationViewSet(generics.RetrieveAPIView):
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
+
 class PricesAgainstProjectCompletionViewSet(generics.RetrieveAPIView):
     queryset = ProjectInformation.objects.all()
     serializer_class = PricesAgainstProjectCompletionSerializer
@@ -160,7 +161,7 @@ class PricesAgainstProjectCompletionViewSet(generics.RetrieveAPIView):
 
 def data_convert_into_interval_for_rooms(apartment_details):
     min_room = apartment_details.aggregate(min_room=Min('rooms'))['min_room']
-    max_room = apartment_details.aggregate(max_room=Max('rooms'))['max_room']  # Corrected here
+    max_room = apartment_details.aggregate(max_room=Max('rooms'))['max_room']  
     num_midpoints = 7
     interval = (max_room - min_room) / (num_midpoints + 1)
     midpoints = [min_room]
@@ -295,8 +296,8 @@ class PricesAgainstAreaOfApartmentsViewSet(generics.RetrieveAPIView):
 
 
 class MyPagination(PageNumberPagination):
-    page_size = 100
-    max_page_size = 100
+    page_size = 20
+    max_page_size = 20
 
 class PropertyDetailViewSet(generics.ListAPIView):
     pagination_class = MyPagination
@@ -381,27 +382,17 @@ class PropertyDetailViewSet(generics.ListAPIView):
         else:
             return {
                 'property_id': apartment_id,
-                'for_rent': "nan",
+                'purpose': "nan",
+                'completion':'nan',
+                'added_on':'nan',
                 'state':'Dubai',
                 'sub_state':'Dubai Marina',
-                'property_type':'for_sale',
             }
 
 
-# def insert_data_from_csv():
-#     try:
-#         csv_file_path = os.path.join(settings.MEDIA_ROOT, 'csvfiles/source_file_data.csv')
-#         df = pd.read_csv(csv_file_path, header=0)
-#         for index, row in df.iterrows():
-#             apartment_id = row['id']
-#             try:
-#                 apartment_detail = ApartmentDetail.objects.get(apartment_id=apartment_id)
-#                 apartment_detail.title = row['Title']
-#                 apartment_detail.save()
-#                 print(f"Updated title for apartment with ID {apartment_id}")
-#             except ApartmentDetail.DoesNotExist:
-#                 print(f"Apartment with ID {apartment_id} not found in the database.")
-#     except FileNotFoundError:
-#         print(f"File {csv_file_path} not found.")
 
-# insert_data_from_csv()
+
+
+
+
+    

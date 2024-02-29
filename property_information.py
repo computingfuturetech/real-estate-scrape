@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import os
 
-new_url = 'https://www.bayut.com/for-sale/apartments/dubai/dubai-marina/'
+new_url = 'https://www.bayut.com/to-rent/apartments/dubai/dubai-marina/'
 page_numbers = [''] + [f'page-{i}/' for i in range(2, 25)]
 
 def extract_property_information(url, listing_id):
@@ -33,7 +33,7 @@ def extract_property_information(url, listing_id):
 csv_file_path = 'property_information.csv'
 project_info_headers = ['id', 'Type','Purpose','Completion','Added on']
 
-with open(csv_file_path, 'w', newline='', encoding='utf-8') as csv_file:
+with open(csv_file_path, 'a', newline='', encoding='utf-8') as csv_file:
     csv_writer = csv.DictWriter(csv_file, fieldnames=project_info_headers)
     csv_writer.writeheader()
 

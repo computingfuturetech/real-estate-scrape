@@ -26,7 +26,7 @@ class ApartmentDetailSerializer(serializers.ModelSerializer):
 class PropertyDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model=PropertyDetail
-        fields=['property_id','for_rent']
+        fields=['property_id','purpose','completion','added_on','state','sub_state']
 
 class PricesAgainstProjectCompletionSerializer(serializers.ModelSerializer):
     class Meta:
