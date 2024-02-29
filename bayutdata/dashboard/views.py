@@ -199,7 +199,7 @@ class PricesAgainstNumberOfRoomsViewSet(generics.RetrieveAPIView):
             to_rent = request.GET.get('to_rent')
             apartment_details = ApartmentDetail.objects.all()
             if to_rent:
-                property_details = PropertyDetail.objects.filter(for_rent=to_rent)
+                property_details = PropertyDetail.objects.filter(rent_frequency=to_rent)
                 if property_details:
                     property_ids = property_details.values_list('property_id', flat=True)
                     apartment_details = apartment_details.filter(apartment_id__in=property_ids)
@@ -266,7 +266,7 @@ class PricesAgainstAreaOfApartmentsViewSet(generics.RetrieveAPIView):
         try:
             to_rent = request.GET.get('to_rent')
             if to_rent:
-                property_details = PropertyDetail.objects.filter(for_rent=to_rent)
+                property_details = PropertyDetail.objects.filter(rent_frequency=to_rent)
                 if property_details:
                     property_ids = property_details.values_list('property_id', flat=True)
                     apartment_details = self.queryset.filter(apartment_id__in=property_ids)
@@ -385,10 +385,10 @@ class PropertyDetailViewSet(generics.ListAPIView):
                 'purpose': "nan",
                 'completion':'nan',
                 'added_on':'nan',
+                'rent_frequency':'nan',
                 'state':'Dubai',
                 'sub_state':'Dubai Marina',
             }
-
 
 
 

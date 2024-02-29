@@ -236,6 +236,8 @@ def insert_validated_data_from_csv():
 
 def insert_property_detail_from_csv():
     try:
+        property_detail=PropertyDetail.objects.all()
+        property_detail.delete()
         csv_file_path = os.path.join(settings.MEDIA_ROOT, 'csvfiles/property_details.csv')
         df = pd.read_csv(csv_file_path, header=0)
         for index, row in df.iterrows():
@@ -250,6 +252,7 @@ def insert_property_detail_from_csv():
                     'purpose': row['Purpose'],
                     'completion': completion_value,
                     'added_on': row['Added on'],
+                    'rent_frequency':row['Rent_Frequency'],
                 }
                 property_information = PropertyDetail(**data)
                 property_information.save()
@@ -262,4 +265,4 @@ def insert_property_detail_from_csv():
                 print(f"Skipping row {index} due to non-integer id value: {property_id}")
                 continue
     except FileNotFoundError:
-        print(f"File {csv_file_path} not found.")   
+        print(f"File {csv_file_path} not found.") 

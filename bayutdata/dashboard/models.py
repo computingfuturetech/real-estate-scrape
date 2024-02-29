@@ -53,5 +53,6 @@ class PropertyDetail(models.Model):
     added_on=models.CharField(max_length=100)
     state = models.CharField(max_length=100, default='Dubai')
     sub_state=models.CharField(max_length=100,default='Dubai Marina')
+    rent_frequency=models.CharField(max_length=10,default='nan')
 
 
